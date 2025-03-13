@@ -518,6 +518,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'pretix.helpers.logs.RequestIdMiddleware',
     'pretix.api.middleware.IdempotencyMiddleware',
+    'pretix.db.DbAuthenticationMiddleware',
     'pretix.multidomain.middlewares.MultiDomainMiddleware',
     'pretix.base.middleware.CustomCommonMiddleware',
     'pretix.multidomain.middlewares.SessionMiddleware',
