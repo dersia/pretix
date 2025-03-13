@@ -52,6 +52,10 @@ from .helpers.config import EnvOrParserConfig
 # Pull in all settings that we also need at wheel require time
 from ._base_settings import *  # NOQA
 
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+from datetime import datetime, timedelta
+
 
 from django.contrib.messages import constants as messages  # NOQA
 from django.utils.translation import gettext_lazy as _  # NOQA
@@ -112,6 +116,92 @@ PDFTK = config.get('tools', 'pdftk', fallback=None)
 
 PRETIX_AUTH_BACKENDS = config.get('pretix', 'auth_backends', fallback='pretix.base.auth.NativeAuthBackend').split(',')
 
+## AZURE SETTINGS
+AZURE_KEY_VAULT_URL = config.get("azure", "key_vault_url", fallback="")
+AZURE_REDIS_PW_FROM_KEY_VAULT = bool(config.get("azure", "redis_pw_from_key_vault", fallback=False))
+AZURE_MANAGED_IDENTITY = config.get("azure", "managed_identity_client_id", fallback="")
+AZURE_TENANT_ID = config.get("azure", "azure_tenant_id", fallback="")
+
+azure_credential = DefaultAzureCredential(
+    managed_identity_client_id=AZURE_MANAGED_IDENTITY,
+    visual_studio_code_tenant_id=AZURE_TENANT_ID,
+    shared_cache_tenant_id=AZURE_TENANT_ID,
+)
+
+def get_redis_connectionstring(url):
+    if url != None and url != "" and AZURE_REDIS_PW_FROM_KEY_VAULT and AZURE_KEY_VAULT_URL != "" and AZURE_MANAGED_IDENTITY != "":
+        parsedUrl = urlparse(url)
+        key_vault_secret_name = parsedUrl.password
+        logging.info("REDIS Secret Name: {} // KeyVaultUri: {}".format(key_vault_secret_name, AZURE_KEY_VAULT_URL))
+        secret_client = SecretClient(AZURE_KEY_VAULT_URL, credential=azure_credential)
+        redis_password = secret_client.get_secret(key_vault_secret_name)
+        logging.info("REDIS Received Password form KV {}".format(hasattr(redis_password, 'value') and redis_password.value != ""))
+        if(hasattr(redis_password, 'value') and redis_password.value != ""):
+            new_url = parsedUrl._replace(netloc="{}:{}@{}:{}".format(parsedUrl.username, redis_password.value, parsedUrl.hostname, parsedUrl.port)).geturl()
+            return new_url
+    return url
+
+azure_token = None
+
+def get_db_password(db_backend, fallback):
+    global azure_token
+    if azure_token is not None and azure_token == "disabled":
+        return fallback
+    if azure_token is not None and hasattr(azure_token, 'token') and azure_token.token != "" and azure_token.expires_on > (datetime.now() - timedelta(minutes=3)).timestamp():
+        return azure_token.token
+
+    db_password = fallback
+    if db_password != "":
+        azure_token = "disabled"
+        return db_password
+    
+    
+    if db_backend == "postgresql" and db_password == "":
+        try:
+            logging.info("Acquiring new Token for Managed Identity")
+            azure_token = azure_credential.get_token("https://ossrdbms-aad.database.windows.net", tenant_id=AZURE_TENANT_ID)
+            if azure_token.token != "":
+                db_password = azure_token.token
+                CONN_HEALTH_CHECKS = True
+        except Exception as e:
+            print("error loading managed identity")
+            print(e)
+            raise e
+    return db_password
+
+postgresql_sslmode = config.get('database', 'sslmode', fallback='disable')
+USE_DATABASE_TLS = postgresql_sslmode != 'disable'
+USE_DATABASE_MTLS = USE_DATABASE_TLS and config.has_option('database', 'sslcert')
+
+def get_db_options(db_backend):
+    global azure_token
+    tls_config = {}
+    if db_backend == "sqlite3":
+        return {"init_command": "PRAGMA synchronous=3; PRAGMA cache_size=2000;"}
+    elif azure_token is not None and hasattr(azure_token, 'token'):
+        return {'sslmode': 'require'}
+    elif USE_DATABASE_TLS or USE_DATABASE_MTLS:
+        if not USE_DATABASE_MTLS:
+            if 'postgresql' in db_backend:
+                tls_config = {
+                    'sslmode': config.get('database', 'sslmode'),
+                    'sslrootcert': config.get('database', 'sslrootcert'),
+                }
+        else:
+            if 'postgresql' in db_backend:
+                tls_config = {
+                    'sslmode': config.get('database', 'sslmode'),
+                    'sslrootcert': config.get('database', 'sslrootcert'),
+                    'sslcert': config.get('database', 'sslcert'),
+                    'sslkey': config.get('database', 'sslkey'),
+                }
+        return tls_config
+    return {}
+
+## DATABASE SETTINGS
+db_name = config.get("database", "name", fallback=os.path.join(DATA_DIR, 'db.sqlite3'))
+
+
 db_backend = config.get('database', 'backend', fallback='sqlite3')
 if db_backend == 'postgresql_psycopg2':
     db_backend = 'postgresql'
@@ -121,45 +211,22 @@ elif 'mysql' in db_backend:
 
 DATABASE_ADVISORY_LOCK_INDEX = config.getint('database', 'advisory_lock_index', fallback=0)
 
-db_options = {}
-
-postgresql_sslmode = config.get('database', 'sslmode', fallback='disable')
-USE_DATABASE_TLS = postgresql_sslmode != 'disable'
-USE_DATABASE_MTLS = USE_DATABASE_TLS and config.has_option('database', 'sslcert')
-
-if USE_DATABASE_TLS or USE_DATABASE_MTLS:
-    tls_config = {}
-    if not USE_DATABASE_MTLS:
-        if 'postgresql' in db_backend:
-            tls_config = {
-                'sslmode': config.get('database', 'sslmode'),
-                'sslrootcert': config.get('database', 'sslrootcert'),
-            }
-    else:
-        if 'postgresql' in db_backend:
-            tls_config = {
-                'sslmode': config.get('database', 'sslmode'),
-                'sslrootcert': config.get('database', 'sslrootcert'),
-                'sslcert': config.get('database', 'sslcert'),
-                'sslkey': config.get('database', 'sslkey'),
-            }
-
-    db_options.update(tls_config)
+# db_options = {}
 
 db_disable_server_side_cursors = db_backend == 'postgresql' and config.getboolean('database', 'disable_server_side_cursors', fallback=False)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.' + db_backend,
-        'NAME': config.get('database', 'name', fallback=os.path.join(DATA_DIR, 'db.sqlite3')),
+        'NAME': db_name,
         'USER': config.get('database', 'user', fallback=''),
-        'PASSWORD': config.get('database', 'password', fallback=''),
+        'PASSWORD': get_db_password(db_backend, config.get("database", "password", fallback='')),
         'HOST': config.get('database', 'host', fallback=''),
         'PORT': config.get('database', 'port', fallback=''),
         'CONN_MAX_AGE': 0 if db_backend == 'sqlite3' else 120,
         'CONN_HEALTH_CHECKS': db_backend != 'sqlite3',  # Will only be used from Django 4.1 onwards
         'DISABLE_SERVER_SIDE_CURSORS': db_disable_server_side_cursors,
-        'OPTIONS': db_options,
+        'OPTIONS': get_db_options(db_backend),
         'TEST': {}
     }
 }
@@ -170,11 +237,11 @@ if config.has_section('replica'):
         'ENGINE': 'django.db.backends.' + db_backend,
         'NAME': config.get('replica', 'name', fallback=DATABASES['default']['NAME']),
         'USER': config.get('replica', 'user', fallback=DATABASES['default']['USER']),
-        'PASSWORD': config.get('replica', 'password', fallback=DATABASES['default']['PASSWORD']),
+        'PASSWORD': get_db_password(db_backend, config.get('replica', 'password', fallback=DATABASES['default']['PASSWORD'])),
         'HOST': config.get('replica', 'host', fallback=DATABASES['default']['HOST']),
         'PORT': config.get('replica', 'port', fallback=DATABASES['default']['PORT']),
         'CONN_MAX_AGE': 0 if db_backend == 'sqlite3' else 120,
-        'OPTIONS': db_options,
+        'OPTIONS': get_db_options(db_backend),
         'TEST': {}
     }
     DATABASE_ROUTERS = ['pretix.helpers.database.ReplicaRouter']
@@ -230,20 +297,30 @@ LANGUAGE_CODE = config.get('locale', 'default', fallback='en')
 TIME_ZONE = config.get('locale', 'timezone', fallback='UTC')
 
 MAIL_FROM = SERVER_EMAIL = DEFAULT_FROM_EMAIL = config.get('mail', 'from', fallback='pretix@localhost')
+CUSTOM_EMAIL_BACKEND = config.get("mail", "backend")
+if CUSTOM_EMAIL_BACKEND == "django_o365mail.EmailBackend":
+    O365_MAIL_CLIENT_ID = config.get("azure", "graph_client_id")
+    O365_MAIL_CLIENT_SECRET = config.get("azure", "graph_client_secret")
+    O365_MAIL_TENANT_ID = config.get("azure", "tenant_id")
+    O365_MAIL_SAVE_TO_SENT = True
+    O365_ACTUALLY_SEND_IN_DEBUG = True
+    O365_MAIL_MAILBOX_KWARGS = {'resource': MAIL_FROM}
+else:
+    EMAIL_HOST = config.get('mail', 'host', fallback='localhost')
+    EMAIL_PORT = config.getint('mail', 'port', fallback=25)
+    EMAIL_HOST_USER = config.get('mail', 'user', fallback='')
+    EMAIL_HOST_PASSWORD = config.get('mail', 'password', fallback='')
+    EMAIL_USE_TLS = config.getboolean('mail', 'tls', fallback=False)
+    EMAIL_USE_SSL = config.getboolean('mail', 'ssl', fallback=False)
+    EMAIL_SUBJECT_PREFIX = '[pretix] '
+    EMAIL_BACKEND = EMAIL_CUSTOM_SMTP_BACKEND = CUSTOM_EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_TIMEOUT = 60
+
 MAIL_FROM_NOTIFICATIONS = config.get('mail', 'from_notifications', fallback=MAIL_FROM)
 MAIL_FROM_ORGANIZERS = config.get('mail', 'from_organizers', fallback=MAIL_FROM)
 MAIL_CUSTOM_SENDER_VERIFICATION_REQUIRED = config.getboolean('mail', 'custom_sender_verification_required', fallback=True)
 MAIL_CUSTOM_SENDER_SPF_STRING = config.get('mail', 'custom_sender_spf_string', fallback='')
 MAIL_CUSTOM_SMTP_ALLOW_PRIVATE_NETWORKS = config.getboolean('mail', 'custom_smtp_allow_private_networks', fallback=DEBUG)
-EMAIL_HOST = config.get('mail', 'host', fallback='localhost')
-EMAIL_PORT = config.getint('mail', 'port', fallback=25)
-EMAIL_HOST_USER = config.get('mail', 'user', fallback='')
-EMAIL_HOST_PASSWORD = config.get('mail', 'password', fallback='')
-EMAIL_USE_TLS = config.getboolean('mail', 'tls', fallback=False)
-EMAIL_USE_SSL = config.getboolean('mail', 'ssl', fallback=False)
-EMAIL_SUBJECT_PREFIX = '[pretix] '
-EMAIL_BACKEND = EMAIL_CUSTOM_SMTP_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_TIMEOUT = 60
 
 ADMINS = [('Admin', n) for n in config.get('mail', 'admins', fallback='').split(",") if n]
 
@@ -273,6 +350,7 @@ redis_ssl_cert_reqs = config.get('redis', 'ssl_cert_reqs', fallback='none')
 USE_REDIS_TLS = redis_ssl_cert_reqs != 'none'
 USE_REDIS_MTLS = USE_REDIS_TLS and config.has_option('redis', 'ssl_certfile')
 HAS_REDIS_PASSWORD = config.has_option('redis', 'password')
+REDIS_URL = get_redis_connectionstring(config.get("redis", "location"))
 if HAS_REDIS:
     OPTIONS = {
         "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -315,12 +393,12 @@ if HAS_REDIS:
 
     CACHES['redis'] = {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": config.get('redis', 'location'),
+        "LOCATION": REDIS_URL,
         "OPTIONS": OPTIONS
     }
     CACHES['redis_sessions'] = {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": config.get('redis', 'location'),
+        "LOCATION": REDIS_URL,
         "TIMEOUT": 3600 * 24 * 30,
         "OPTIONS": OPTIONS
     }
@@ -340,9 +418,11 @@ if not SESSION_ENGINE:
 HAS_CELERY = config.has_option('celery', 'broker')
 HAS_CELERY_BROKER_TRANSPORT_OPTS = config.has_option('celery', 'broker_transport_options')
 HAS_CELERY_BACKEND_TRANSPORT_OPTS = config.has_option('celery', 'backend_transport_options')
+BORKER_URL = get_redis_connectionstring(config.get("celery", "broker", fallback=None))
+RESULT_URL = get_redis_connectionstring(config.get("celery", "backend", fallback=None))
 if HAS_CELERY:
-    CELERY_BROKER_URL = config.get('celery', 'broker')
-    CELERY_RESULT_BACKEND = config.get('celery', 'backend')
+    CELERY_BROKER_URL = BORKER_URL
+    CELERY_RESULT_BACKEND = RESULT_URL
     if HAS_CELERY_BROKER_TRANSPORT_OPTS:
         CELERY_BROKER_TRANSPORT_OPTIONS = loads(config.get('celery', 'broker_transport_options'))
     if HAS_CELERY_BACKEND_TRANSPORT_OPTS:
