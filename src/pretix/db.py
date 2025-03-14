@@ -23,7 +23,7 @@ class DbAuthenticationMiddleware:
         except OperationalError as e:
             print('connection failed reloading')
             db_backend = config.get("database", "backend")
-            newDbPw = get_db_password(db_backend)
+            newDbPw = get_db_password(db_backend, config.get("database", "password", fallback=''))
             print('got new password, setting')
             databases = settings.DATABASES
             databases['default']['PASSWORD'] = newDbPw

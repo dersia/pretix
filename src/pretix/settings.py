@@ -271,7 +271,10 @@ SITE_URL = config.get('pretix', 'url', fallback='http://localhost:8000')
 if SITE_URL.endswith('/'):
     SITE_URL = SITE_URL[:-1]
 
-CSRF_TRUSTED_ORIGINS = [urlparse(SITE_URL).scheme + '://' + urlparse(SITE_URL).hostname]
+CSRF_TRUSTED_ORIGINS = [
+    urlparse(SITE_URL).scheme + '://' + urlparse(SITE_URL).hostname,
+    "http://localhost:3000"
+]
 
 TRUST_X_FORWARDED_FOR = config.getboolean('pretix', 'trust_x_forwarded_for', fallback=False)
 USE_X_FORWARDED_HOST = config.getboolean('pretix', 'trust_x_forwarded_host', fallback=False)
