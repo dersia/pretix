@@ -308,6 +308,7 @@ if CUSTOM_EMAIL_BACKEND == "django_o365mail.EmailBackend":
     O365_MAIL_SAVE_TO_SENT = True
     O365_ACTUALLY_SEND_IN_DEBUG = True
     O365_MAIL_MAILBOX_KWARGS = {'resource': MAIL_FROM}
+    EMAIL_BACKEND = "django_o365mail.EmailBackend"
 else:
     EMAIL_HOST = config.get('mail', 'host', fallback='localhost')
     EMAIL_PORT = config.getint('mail', 'port', fallback=25)
