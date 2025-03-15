@@ -129,11 +129,9 @@ azure_credential = DefaultAzureCredential(
 )
 
 def get_redis_connectionstring(url):
-    print(f"REDIS URL: {url}")
     if url != None and url != "" and AZURE_REDIS_PW_FROM_KEY_VAULT and AZURE_KEY_VAULT_URL != "" and AZURE_MANAGED_IDENTITY != "":
         parsedUrl = urlparse(url)
         key_vault_secret_name = parsedUrl.password
-        print("REDIS Secret Name: {} // KeyVaultUri: {}".format(key_vault_secret_name, AZURE_KEY_VAULT_URL))
         logging.info("REDIS Secret Name: {} // KeyVaultUri: {}".format(key_vault_secret_name, AZURE_KEY_VAULT_URL))
         secret_client = SecretClient(AZURE_KEY_VAULT_URL, credential=azure_credential)
         redis_password = secret_client.get_secret(key_vault_secret_name)
