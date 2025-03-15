@@ -304,7 +304,7 @@ CUSTOM_EMAIL_BACKEND = config.get("mail", "backend", fallback="")
 if CUSTOM_EMAIL_BACKEND == "django_o365mail.EmailBackend":
     O365_MAIL_CLIENT_ID = config.get("azure", "graph_client_id")
     O365_MAIL_CLIENT_SECRET = config.get("azure", "graph_client_secret")
-    O365_MAIL_TENANT_ID = config.get("azure", "tenant_id")
+    O365_MAIL_TENANT_ID = AZURE_TENANT_ID
     O365_MAIL_SAVE_TO_SENT = True
     O365_ACTUALLY_SEND_IN_DEBUG = True
     O365_MAIL_MAILBOX_KWARGS = {'resource': MAIL_FROM}
