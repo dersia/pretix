@@ -71,8 +71,8 @@ config = EnvOrParserConfig(_config)
 CONFIG_FILE = config
 DATA_DIR = config.get('pretix', 'datadir', fallback=os.environ.get('DATA_DIR', 'data'))
 LOG_DIR = config.get('pretix', 'logdir', fallback=os.path.join(DATA_DIR, 'logs'))
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-PROFILE_DIR = os.path.join(DATA_DIR, 'profiles')
+MEDIA_ROOT = config.get('pretix', 'mediadir', fallback=os.path.join(DATA_DIR, 'media'))
+PROFILE_DIR = config.get('pretix', 'profilesdir', fallback=os.path.join(DATA_DIR, 'profiles'))
 CACHE_DIR = config.get('pretix', 'cachedir', fallback=os.path.join(DATA_DIR, 'cache'))
 
 Path(DATA_DIR).mkdir(parents=False, exist_ok=True)
