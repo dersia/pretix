@@ -29,12 +29,15 @@ class EnvOrParserConfig:
         self.cp = configparser
 
     def _envkey(self, section, option):
+        print(f'Searching for: PRETIX_{section}_{option}')
         section = re.sub('[^a-zA-Z0-9]', '_', section.upper())
         option = re.sub('[^a-zA-Z0-9]', '_', option.upper())
         return f'PRETIX_{section}_{option}'
 
     def get(self, section, option, *, raw=False, vars=None, fallback=_UNSET):
+        print(f'Searching for: {section}_{option}')
         if self._envkey(section, option) in os.environ:
+            print(f'Found envvar: PRETIX_{section}_{option}')
             return os.environ[self._envkey(section, option)]
         return self.cp.get(section, option, raw=raw, vars=vars, fallback=fallback)
 
