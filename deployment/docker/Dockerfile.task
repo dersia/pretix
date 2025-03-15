@@ -80,6 +80,9 @@ ENV PYTHONUNBUFFERED=1
 RUN npm install -g n && n latest && npm install -g npm && hash -r && chmod +x ./pretix.task.bash
 
 RUN python -m pretix compilemessages
+RUN python -m pretix compilejsi18n
+RUN python -m pretix collectstatic --noinput
+RUN python -m pretix compress
 
 VOLUME ["/app/data", "/app/public"]
 
