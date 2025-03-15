@@ -45,6 +45,25 @@ from .base.views import (
     cachedfiles, csp, health, js_catalog, metrics, redirect, source,
 )
 
+def static2(prefix, view=serve, **kwargs):
+    """
+    Return a URL pattern for serving files in debug mode.
+
+    from django.conf import settings
+    from django.conf.urls.static import static
+
+    urlpatterns = [
+        # ... the rest of your URLconf goes here ...
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    """
+    if not prefix:
+        raise ImproperlyConfigured("Empty static prefix not permitted")
+    return [
+        re_path(
+            r"^%s(?P<path>.*)$" % re.escape(prefix.lstrip("/")), view, kwargs=kwargs
+        ),
+    ]
+
 base_patterns = [
     re_path(r'^download/(?P<id>[^/]+)/$', cachedfiles.DownloadView.as_view(),
             name='cachedfile.download'),
@@ -76,5 +95,8 @@ if settings.DEBUG:
         debug_patterns.append(re_path(r'^__debug__/', include(debug_toolbar.urls)))
     except ImportError:
         pass
+
+base_patterns += static2(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+base_patterns += static2(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 common_patterns = base_patterns + control_patterns + debug_patterns
