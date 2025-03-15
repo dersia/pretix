@@ -32,10 +32,12 @@
 # distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations under the License.
 
+import re
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, re_path
 from django.views.generic import RedirectView
+from django.views.static import serve
 
 import pretix.control.urls
 import pretix.presale.urls
@@ -88,7 +90,6 @@ control_patterns = [
 
 debug_patterns = []
 if settings.DEBUG:
-    base_patterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     try:
         import debug_toolbar
 

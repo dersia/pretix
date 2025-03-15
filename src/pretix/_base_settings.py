@@ -207,9 +207,6 @@ TEMPLATES = [
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static.dist')
-print("------------------------------------------------------")
-print(STATIC_ROOT)
-print("------------------------------------------------------")
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -221,14 +218,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'pretix/static')
 ] if os.path.exists(os.path.join(BASE_DIR, 'pretix/static')) else []
 
-print("------------------------------------------------------")
-print(STATICFILES_DIRS)
-print("------------------------------------------------------")
-
 STATICI18N_ROOT = os.path.join(BASE_DIR, "pretix/static")
-print("------------------------------------------------------")
-print(STATICI18N_ROOT)
-print("------------------------------------------------------")
 
 STORAGES = {
     "default": {
