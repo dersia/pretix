@@ -1,5 +1,6 @@
 data/
 pretix.cfg
+pretix.docker.cfg
 *.sqlite
 .cache
 static.dist/

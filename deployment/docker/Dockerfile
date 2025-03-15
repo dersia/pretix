@@ -47,6 +47,7 @@ RUN pip install --upgrade pip
 
 # Copy the requirements file first (better caching)
 COPY requirements.txt /app/
+COPY ./src/pretix.docker.cfg /app/src/pretix.cfg
 
 # Install Python dependencies
 RUN --mount=type=secret,id=GITHUB_TOKEN_SIA \
@@ -71,6 +72,7 @@ WORKDIR /app
 
 # Copy application code
 COPY --chown=appuser:appuser ./deployment/docker/pretix.bash .
+COPY --chown=appuser:appuser ./src/pretix.docker.cfg ./src/pretix.cfg
 
 # Set environment variables to optimize Python
 ENV PYTHONDONTWRITEBYTECODE=1

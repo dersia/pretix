@@ -71,6 +71,7 @@ WORKDIR /app
 
 # Copy application code
 COPY --chown=appuser:appuser ./deployment/docker/pretix.worker.bash .
+COPY --chown=appuser:appuser ./src/pretix.docker.cfg ./src/pretix.cfg
 
 # Set environment variables to optimize Python
 ENV PYTHONDONTWRITEBYTECODE=1

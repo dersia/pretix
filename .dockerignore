@@ -7,4 +7,16 @@ pretixeu/
 src/data/
 src/pretix/static.dist/
 src/dist/
-
+**/node-modules
+data/logs/
+.github/
+.editorconfig
+.git*
+CONTRIBUTORS
+LICENSE
+README.rst
+SECURITY.md
+deployment/*
+!deployment/docker/*.bash
+doc/
+docker.log
