@@ -354,7 +354,7 @@ redis_ssl_cert_reqs = config.get('redis', 'ssl_cert_reqs', fallback='none')
 USE_REDIS_TLS = redis_ssl_cert_reqs != 'none'
 USE_REDIS_MTLS = USE_REDIS_TLS and config.has_option('redis', 'ssl_certfile')
 HAS_REDIS_PASSWORD = config.has_option('redis', 'password')
-REDIS_URL = get_redis_connectionstring(config.get("redis", "location"))
+REDIS_URL = get_redis_connectionstring(config.get("redis", "location", fallback=""))
 if HAS_REDIS:
     OPTIONS = {
         "CLIENT_CLASS": "django_redis.client.DefaultClient",
