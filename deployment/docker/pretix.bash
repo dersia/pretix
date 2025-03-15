@@ -1,53 +1,15 @@
 #!/bin/bash
-cd /pretix/src
-export DJANGO_SETTINGS_MODULE=production_settings
-export DATA_DIR=/data/
-export HOME=/pretix
 
-AUTOMIGRATE=${AUTOMIGRATE:-yes}
-NUM_WORKERS_DEFAULT=$((2 * $(nproc)))
-export NUM_WORKERS=${NUM_WORKERS:-$NUM_WORKERS_DEFAULT}
+GUNICORN_WORKERS="${GUNICORN_WORKERS:-${WEB_CONCURRENCY:-$((2 * $(nproc)))}}"
+GUNICORN_MAX_REQUESTS="${GUNICORN_MAX_REQUESTS:-1200}"
+GUNICORN_MAX_REQUESTS_JITTER="${GUNICORN_MAX_REQUESTS_JITTER:-50}"
 
-if [ ! -d /data/logs ]; then
-    mkdir /data/logs;
-fi
-if [ ! -d /data/media ]; then
-    mkdir /data/media;
+if [ "$PRETIX_FILESYSTEM_STATIC" != "/app/public/static" ]; then
+    python -m pretix collectstatic --noinput
+    python -m pretix compress
+    python -m pretix rebuild --npm-install
 fi
 
-if [ "$1" == "cron" ]; then
-    exec python3 -m pretix runperiodic
-fi
+python -m pretix migrate
 
-if [ "$AUTOMIGRATE" != "skip" ]; then
-  python3 -m pretix migrate --noinput
-fi
-
-if [ "$1" == "all" ]; then
-    exec sudo -E /usr/bin/supervisord -n -c /etc/supervisord.all.conf
-fi
-
-if [ "$1" == "web" ]; then
-    exec sudo -E /usr/bin/supervisord -n -c /etc/supervisord.web.conf
-fi
-
-if [ "$1" == "webworker" ]; then
-    exec gunicorn pretix.wsgi \
-        --name pretix \
-        --workers $NUM_WORKERS \
-        --max-requests 1200 \
-        --max-requests-jitter 50 \
-        --log-level=info \
-        --bind=unix:/tmp/pretix.sock
-fi
-
-if [ "$1" == "taskworker" ]; then
-    shift
-    exec celery -A pretix.celery_app worker -l info "$@"
-fi
-
-if [ "$1" == "upgrade" ]; then
-    exec python3 -m pretix updateassets
-fi
-
-exec python3 -m pretix "$@"
+gunicorn --name pretix --workers "${GUNICORN_WORKERS}" --max-requests "${GUNICORN_MAX_REQUESTS}" --max-requests-jitter "${GUNICORN_MAX_REQUESTS_JITTER}" --log-level=info --bind=0.0.0.0:8000 pretix.wsgi
