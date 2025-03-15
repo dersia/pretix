@@ -118,7 +118,7 @@ PRETIX_AUTH_BACKENDS = config.get('pretix', 'auth_backends', fallback='pretix.ba
 
 ## AZURE SETTINGS
 AZURE_KEY_VAULT_URL = config.get("azure", "key_vault_url", fallback="")
-AZURE_REDIS_PW_FROM_KEY_VAULT = bool(config.get("azure", "redis_pw_from_key_vault", fallback=False))
+AZURE_REDIS_PW_FROM_KEY_VAULT = config.getboolean("azure", "redis_pw_from_key_vault", fallback=False)
 AZURE_MANAGED_IDENTITY = config.get("azure", "managed_identity_client_id", fallback="")
 AZURE_TENANT_ID = config.get("azure", "azure_tenant_id", fallback="")
 
@@ -129,9 +129,11 @@ azure_credential = DefaultAzureCredential(
 )
 
 def get_redis_connectionstring(url):
+    print(f"REDIS URL: {url}")
     if url != None and url != "" and AZURE_REDIS_PW_FROM_KEY_VAULT and AZURE_KEY_VAULT_URL != "" and AZURE_MANAGED_IDENTITY != "":
         parsedUrl = urlparse(url)
         key_vault_secret_name = parsedUrl.password
+        print("REDIS Secret Name: {} // KeyVaultUri: {}".format(key_vault_secret_name, AZURE_KEY_VAULT_URL))
         logging.info("REDIS Secret Name: {} // KeyVaultUri: {}".format(key_vault_secret_name, AZURE_KEY_VAULT_URL))
         secret_client = SecretClient(AZURE_KEY_VAULT_URL, credential=azure_credential)
         redis_password = secret_client.get_secret(key_vault_secret_name)
