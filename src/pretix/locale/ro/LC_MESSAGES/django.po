@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 10:10+0000\n"
+"POT-Creation-Date: 2025-03-16 18:24+0000\n"
 "PO-Revision-Date: 2022-04-28 02:00+0000\n"
 "Last-Translator: Edd28 <chitu_edy@yahoo.com>\n"
 "Language-Team: Romanian <https://translate.pretix.eu/projects/pretix/pretix/"
@@ -218,13 +218,13 @@ msgstr "Limitarea la evenimente"
 #: pretix/base/exporters/orderlist.py:1077
 #: pretix/base/modelimport_orders.py:602
 #: pretix/base/modelimport_vouchers.py:326 pretix/base/models/orders.py:272
-#: pretix/base/models/vouchers.py:292 pretix/control/forms/filter.py:556
+#: pretix/base/models/vouchers.py:292 pretix/control/forms/filter.py:555
 #: pretix/control/templates/pretixcontrol/order/index.html:904
 #: pretix/control/templates/pretixcontrol/organizers/webhooks.html:38
 #: pretix/control/templates/pretixcontrol/user/staff_session_list.html:21
 #: pretix/control/views/vouchers.py:121
 #: pretix/plugins/banktransfer/refund_export.py:46
-#: pretix/plugins/checkinlists/exporters.py:521
+#: pretix/plugins/checkinlists/exporters.py:523
 msgid "Comment"
 msgstr "Comentariu"
 
@@ -361,7 +361,7 @@ msgid "\"{input}\" is not a valid choice."
 msgstr "{value} nu este o adresă de e-mail validă."
 
 #: pretix/api/serializers/order.py:1374 pretix/api/views/cart.py:224
-#: pretix/base/services/orders.py:1530
+#: pretix/base/services/orders.py:1532
 #, python-brace-format
 msgid "The selected seat \"{seat}\" is not available."
 msgstr "Locul selectat \"{seat}\" nu este disponibil."
@@ -427,25 +427,25 @@ msgid ""
 msgstr ""
 "Aplicația \"{application_name}\" a fost autorizată să vă acceseze contul."
 
-#: pretix/api/views/order.py:607 pretix/control/views/orders.py:1588
+#: pretix/api/views/order.py:608 pretix/control/views/orders.py:1588
 #: pretix/presale/views/order.py:731 pretix/presale/views/order.py:804
 msgid "You cannot generate an invoice for this order."
 msgstr "Nu puteți genera o factură pentru această comandă."
 
-#: pretix/api/views/order.py:612 pretix/control/views/orders.py:1590
+#: pretix/api/views/order.py:613 pretix/control/views/orders.py:1590
 #: pretix/presale/views/order.py:733 pretix/presale/views/order.py:806
 msgid "An invoice for this order already exists."
 msgstr "Există deja o factură pentru această comandă."
 
-#: pretix/api/views/order.py:638 pretix/control/views/orders.py:1716
+#: pretix/api/views/order.py:639 pretix/control/views/orders.py:1716
 #: pretix/control/views/users.py:145
 msgid "There was an error sending the mail. Please try again later."
 msgstr ""
 "S-a produs o eroare la trimiterea mesajului. Vă rugăm să încercați din nou "
 "mai târziu."
 
-#: pretix/api/views/order.py:718 pretix/base/services/cart.py:215
-#: pretix/base/services/orders.py:186 pretix/presale/views/order.py:788
+#: pretix/api/views/order.py:719 pretix/base/services/cart.py:215
+#: pretix/base/services/orders.py:187 pretix/presale/views/order.py:788
 msgid "One of the selected products is not available in the selected country."
 msgstr "Unul dintre produsele selectate nu este disponibil în țara selectată."
 
@@ -697,7 +697,7 @@ msgstr "{system} Utilizator"
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:49
 #: pretix/control/templates/pretixcontrol/organizers/customers.html:59
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:161
-#: pretix/plugins/checkinlists/exporters.py:505
+#: pretix/plugins/checkinlists/exporters.py:507
 #: pretix/presale/checkoutflow.py:1532 pretix/presale/forms/checkout.py:57
 #: pretix/presale/forms/customer.py:56 pretix/presale/forms/customer.py:131
 #: pretix/presale/forms/customer.py:286 pretix/presale/forms/customer.py:332
@@ -794,6 +794,13 @@ msgid ""
 "{fields}."
 msgstr ""
 
+#: pretix/base/customersso/oidc.py:137
+#, python-brace-format
+msgid ""
+"No supported Token Endpoint Auth Methods supported: "
+"{token_endpoint_auth_methods_supported}"
+msgstr ""
+
 #: pretix/base/customersso/oidc.py:219 pretix/base/customersso/oidc.py:226
 #: pretix/base/customersso/oidc.py:245 pretix/base/customersso/oidc.py:262
 #: pretix/base/customersso/oidc.py:269 pretix/presale/views/customer.py:743
@@ -886,9 +893,9 @@ msgstr "Întrebări"
 #: pretix/base/models/items.py:2038 pretix/base/models/orders.py:1483
 #: pretix/base/models/orders.py:2995 pretix/base/models/vouchers.py:187
 #: pretix/base/models/waitinglist.py:61 pretix/control/forms/event.py:1606
-#: pretix/control/forms/filter.py:424 pretix/control/forms/filter.py:1903
-#: pretix/control/forms/filter.py:2127 pretix/control/forms/filter.py:2242
-#: pretix/control/forms/filter.py:2324 pretix/control/forms/filter.py:2541
+#: pretix/control/forms/filter.py:423 pretix/control/forms/filter.py:1893
+#: pretix/control/forms/filter.py:2115 pretix/control/forms/filter.py:2230
+#: pretix/control/forms/filter.py:2312 pretix/control/forms/filter.py:2529
 #: pretix/control/forms/item.py:327 pretix/control/forms/orders.py:346
 #: pretix/control/forms/orders.py:398 pretix/control/forms/orders.py:828
 #: pretix/control/forms/vouchers.py:118
@@ -902,8 +909,8 @@ msgstr "Întrebări"
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:140
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:167
 #: pretix/control/views/waitinglist.py:318
-#: pretix/plugins/checkinlists/exporters.py:509
-#: pretix/plugins/checkinlists/exporters.py:698
+#: pretix/plugins/checkinlists/exporters.py:511
+#: pretix/plugins/checkinlists/exporters.py:700
 #: pretix/plugins/sendmail/forms.py:137 pretix/plugins/sendmail/forms.py:282
 #: pretix/plugins/sendmail/forms.py:363
 #: pretix/plugins/sendmail/templates/pretixplugins/sendmail/rule_inspect.html:32
@@ -916,12 +923,12 @@ msgstr "Dată"
 
 #: pretix/base/exporters/answers.py:79 pretix/base/exporters/answers.py:88
 #: pretix/control/forms/checkin.py:83 pretix/control/forms/event.py:1607
-#: pretix/control/forms/filter.py:427 pretix/control/forms/filter.py:454
-#: pretix/control/forms/filter.py:1906 pretix/control/forms/filter.py:1939
-#: pretix/control/forms/filter.py:2130 pretix/control/forms/filter.py:2150
-#: pretix/control/forms/filter.py:2245 pretix/control/forms/filter.py:2261
-#: pretix/control/forms/filter.py:2327 pretix/control/forms/filter.py:2362
-#: pretix/control/forms/filter.py:2544 pretix/control/forms/filter.py:2559
+#: pretix/control/forms/filter.py:426 pretix/control/forms/filter.py:453
+#: pretix/control/forms/filter.py:1896 pretix/control/forms/filter.py:1929
+#: pretix/control/forms/filter.py:2118 pretix/control/forms/filter.py:2138
+#: pretix/control/forms/filter.py:2233 pretix/control/forms/filter.py:2249
+#: pretix/control/forms/filter.py:2315 pretix/control/forms/filter.py:2350
+#: pretix/control/forms/filter.py:2532 pretix/control/forms/filter.py:2547
 #: pretix/control/forms/orders.py:830 pretix/control/forms/orders.py:992
 #: pretix/control/templates/pretixcontrol/event/fragment_subevent_choice_simple.html:5
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:67
@@ -981,7 +988,7 @@ msgstr "Identificator extern"
 #: pretix/control/templates/pretixcontrol/order/index.html:256
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:163
 #: pretix/control/views/waitinglist.py:314
-#: pretix/plugins/checkinlists/exporters.py:506
+#: pretix/plugins/checkinlists/exporters.py:508
 #: pretix/presale/checkoutflow.py:1538 pretix/presale/forms/checkout.py:84
 #: pretix/presale/forms/waitinglist.py:78
 #: pretix/presale/templates/pretixpresale/event/order.html:303
@@ -1006,7 +1013,7 @@ msgstr "Nume complet"
 #: pretix/base/models/organizer.py:535 pretix/base/models/seating.py:85
 #: pretix/base/models/waitinglist.py:69 pretix/base/settings.py:3226
 #: pretix/base/settings.py:3236 pretix/base/settings.py:3588
-#: pretix/control/forms/filter.py:624 pretix/control/forms/item.py:439
+#: pretix/control/forms/filter.py:623 pretix/control/forms/item.py:439
 #: pretix/control/forms/organizer.py:913
 #: pretix/control/templates/pretixcontrol/checkin/index.html:109
 #: pretix/control/templates/pretixcontrol/checkin/lists.html:92
@@ -1025,8 +1032,8 @@ msgstr "Nume complet"
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:159
 #: pretix/control/views/waitinglist.py:314 pretix/plugins/badges/models.py:53
 #: pretix/plugins/badges/templates/pretixplugins/badges/index.html:34
-#: pretix/plugins/checkinlists/exporters.py:373
-#: pretix/plugins/checkinlists/exporters.py:758
+#: pretix/plugins/checkinlists/exporters.py:375
+#: pretix/plugins/checkinlists/exporters.py:760
 #: pretix/plugins/reports/exporters.py:885
 #: pretix/plugins/ticketoutputpdf/models.py:333
 #: pretix/plugins/ticketoutputpdf/templates/pretixplugins/ticketoutputpdf/index.html:32
@@ -1098,18 +1105,18 @@ msgstr ""
 #: pretix/base/exporters/orderlist.py:1381
 #: pretix/base/exporters/reusablemedia.py:63 pretix/base/modelimport.py:187
 #: pretix/base/modelimport.py:194 pretix/base/models/orders.py:1399
-#: pretix/control/forms/filter.py:171 pretix/control/forms/filter.py:519
-#: pretix/control/forms/filter.py:706 pretix/control/forms/item.py:608
+#: pretix/control/forms/filter.py:171 pretix/control/forms/filter.py:518
+#: pretix/control/forms/filter.py:705 pretix/control/forms/item.py:608
 #: pretix/control/forms/subevents.py:119 pretix/control/views/item.py:721
 #: pretix/control/views/vouchers.py:139 pretix/control/views/vouchers.py:140
-#: pretix/plugins/checkinlists/exporters.py:598
-#: pretix/plugins/checkinlists/exporters.py:601
-#: pretix/plugins/checkinlists/exporters.py:628
-#: pretix/plugins/checkinlists/exporters.py:644
-#: pretix/plugins/checkinlists/exporters.py:713
-#: pretix/plugins/checkinlists/exporters.py:814
-#: pretix/plugins/checkinlists/exporters.py:815
+#: pretix/plugins/checkinlists/exporters.py:600
+#: pretix/plugins/checkinlists/exporters.py:603
+#: pretix/plugins/checkinlists/exporters.py:630
+#: pretix/plugins/checkinlists/exporters.py:646
+#: pretix/plugins/checkinlists/exporters.py:715
 #: pretix/plugins/checkinlists/exporters.py:816
+#: pretix/plugins/checkinlists/exporters.py:817
+#: pretix/plugins/checkinlists/exporters.py:818
 msgid "Yes"
 msgstr "Da"
 
@@ -1122,17 +1129,17 @@ msgstr "Da"
 #: pretix/base/exporters/orderlist.py:1381
 #: pretix/base/exporters/reusablemedia.py:63 pretix/base/modelimport.py:186
 #: pretix/base/modelimport.py:196 pretix/base/models/orders.py:1401
-#: pretix/control/forms/filter.py:171 pretix/control/forms/filter.py:520
-#: pretix/control/forms/filter.py:707 pretix/control/forms/item.py:609
+#: pretix/control/forms/filter.py:171 pretix/control/forms/filter.py:519
+#: pretix/control/forms/filter.py:706 pretix/control/forms/item.py:609
 #: pretix/control/forms/subevents.py:120 pretix/control/views/item.py:721
 #: pretix/control/views/vouchers.py:139 pretix/control/views/vouchers.py:140
-#: pretix/plugins/checkinlists/exporters.py:598
-#: pretix/plugins/checkinlists/exporters.py:601
-#: pretix/plugins/checkinlists/exporters.py:628
-#: pretix/plugins/checkinlists/exporters.py:713
-#: pretix/plugins/checkinlists/exporters.py:814
-#: pretix/plugins/checkinlists/exporters.py:815
+#: pretix/plugins/checkinlists/exporters.py:600
+#: pretix/plugins/checkinlists/exporters.py:603
+#: pretix/plugins/checkinlists/exporters.py:630
+#: pretix/plugins/checkinlists/exporters.py:715
 #: pretix/plugins/checkinlists/exporters.py:816
+#: pretix/plugins/checkinlists/exporters.py:817
+#: pretix/plugins/checkinlists/exporters.py:818
 msgid "No"
 msgstr "Nu"
 
@@ -1159,7 +1166,7 @@ msgstr "Bilet de eveniment {event}-{code}"
 #: pretix/base/exporters/orderlist.py:837
 #: pretix/base/exporters/orderlist.py:1191
 #: pretix/plugins/checkinlists/exporters.py:88
-#: pretix/plugins/checkinlists/exporters.py:856
+#: pretix/plugins/checkinlists/exporters.py:858
 #: pretix/plugins/reports/accountingreport.py:74
 #: pretix/plugins/reports/exporters.py:461
 #: pretix/plugins/reports/exporters.py:698
@@ -1202,9 +1209,9 @@ msgstr ""
 #: pretix/base/exporters/orderlist.py:441
 #: pretix/base/exporters/orderlist.py:573
 #: pretix/base/exporters/waitinglist.py:114 pretix/base/models/event.py:559
-#: pretix/base/pdf.py:224 pretix/control/forms/filter.py:1242
-#: pretix/control/forms/filter.py:1244 pretix/control/forms/filter.py:1695
-#: pretix/control/forms/filter.py:1697
+#: pretix/base/pdf.py:224 pretix/control/forms/filter.py:1240
+#: pretix/control/forms/filter.py:1242 pretix/control/forms/filter.py:1687
+#: pretix/control/forms/filter.py:1689
 #: pretix/control/templates/pretixcontrol/events/index.html:68
 #: pretix/control/templates/pretixcontrol/organizers/detail.html:64
 msgid "Event name"
@@ -1282,8 +1289,8 @@ msgid "Internal comment"
 msgstr "Comentariu intern"
 
 #: pretix/base/exporters/invoices.py:82 pretix/base/models/orders.py:1751
-#: pretix/base/models/orders.py:2160 pretix/control/forms/filter.py:204
-#: pretix/control/forms/filter.py:1018 pretix/control/forms/filter.py:2282
+#: pretix/base/models/orders.py:2160 pretix/control/forms/filter.py:203
+#: pretix/control/forms/filter.py:1016 pretix/control/forms/filter.py:2270
 #: pretix/control/templates/pretixcontrol/boxoffice/payment.html:9
 #: pretix/control/templates/pretixcontrol/boxoffice/payment.html:14
 #: pretix/control/templates/pretixcontrol/boxoffice/payment.html:44
@@ -1297,8 +1304,8 @@ msgid "Payment provider"
 msgstr "Procesator plăți"
 
 #: pretix/base/exporters/invoices.py:84 pretix/base/exporters/invoices.py:86
-#: pretix/control/forms/filter.py:206 pretix/control/forms/filter.py:1020
-#: pretix/control/forms/filter.py:2284
+#: pretix/control/forms/filter.py:205 pretix/control/forms/filter.py:1018
+#: pretix/control/forms/filter.py:2272
 msgid "All payment providers"
 msgstr "Toți procesatorii de plăți"
 
@@ -1359,7 +1366,7 @@ msgstr "Număr factură"
 #: pretix/control/templates/pretixcontrol/organizers/giftcard.html:72
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/import_assign.html:17
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:11
-#: pretix/plugins/checkinlists/exporters.py:750
+#: pretix/plugins/checkinlists/exporters.py:752
 #: pretix/presale/templates/pretixpresale/event/fragment_giftcard_history.html:6
 msgid "Date"
 msgstr "Dată"
@@ -1375,7 +1382,7 @@ msgstr "Dată"
 #: pretix/control/templates/pretixcontrol/order/refund_choose.html:116
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:22
 #: pretix/control/templates/pretixcontrol/orders/index.html:47
-#: pretix/control/templates/pretixcontrol/orders/index.html:132
+#: pretix/control/templates/pretixcontrol/orders/index.html:131
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:204
 #: pretix/control/templates/pretixcontrol/organizers/customer_membership.html:41
 #: pretix/control/templates/pretixcontrol/search/orders.html:48
@@ -1383,8 +1390,8 @@ msgstr "Dată"
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:29
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:41
 #: pretix/plugins/checkinlists/exporters.py:121
-#: pretix/plugins/checkinlists/exporters.py:490
-#: pretix/plugins/checkinlists/exporters.py:754
+#: pretix/plugins/checkinlists/exporters.py:492
+#: pretix/plugins/checkinlists/exporters.py:756
 #: pretix/plugins/reports/exporters.py:561
 #: pretix/plugins/reports/exporters.py:884
 #: pretix/plugins/ticketoutputpdf/exporters.py:96
@@ -1394,7 +1401,7 @@ msgstr "ID comandă"
 #: pretix/base/exporters/invoices.py:202 pretix/base/exporters/invoices.py:329
 #: pretix/base/forms/auth.py:160 pretix/base/modelimport_orders.py:59
 #: pretix/base/models/customers.py:395 pretix/base/models/waitinglist.py:76
-#: pretix/control/forms/filter.py:552
+#: pretix/control/forms/filter.py:551
 #: pretix/control/templates/pretixcontrol/users/index.html:42
 #: pretix/control/views/waitinglist.py:314
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/pending.html:134
@@ -1425,10 +1432,10 @@ msgstr "Emitent factură:"
 #: pretix/base/exporters/orderlist.py:604 pretix/base/forms/questions.py:686
 #: pretix/base/modelimport_orders.py:206 pretix/base/modelimport_orders.py:352
 #: pretix/base/models/customers.py:311 pretix/base/models/orders.py:1537
-#: pretix/base/models/orders.py:3265 pretix/control/forms/filter.py:628
-#: pretix/control/forms/filter.py:659
+#: pretix/base/models/orders.py:3265 pretix/control/forms/filter.py:627
+#: pretix/control/forms/filter.py:658
 #: pretix/control/templates/pretixcontrol/order/index.html:955
-#: pretix/plugins/checkinlists/exporters.py:532
+#: pretix/plugins/checkinlists/exporters.py:534
 #: pretix/plugins/reports/exporters.py:840
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:88
 #: pretix/presale/templates/pretixpresale/event/order.html:315
@@ -1443,9 +1450,9 @@ msgstr "Adresă"
 #: pretix/base/modelimport_orders.py:217 pretix/base/modelimport_orders.py:363
 #: pretix/base/models/customers.py:312 pretix/base/models/orders.py:1538
 #: pretix/base/models/orders.py:3266 pretix/base/settings.py:1123
-#: pretix/control/forms/filter.py:632 pretix/control/forms/filter.py:663
+#: pretix/control/forms/filter.py:631 pretix/control/forms/filter.py:662
 #: pretix/control/views/item.py:481
-#: pretix/plugins/checkinlists/exporters.py:533
+#: pretix/plugins/checkinlists/exporters.py:535
 #: pretix/plugins/reports/exporters.py:841
 msgid "ZIP code"
 msgstr "Cod poștal"
@@ -1458,9 +1465,9 @@ msgstr "Cod poștal"
 #: pretix/base/modelimport_orders.py:228 pretix/base/modelimport_orders.py:374
 #: pretix/base/models/customers.py:313 pretix/base/models/orders.py:1539
 #: pretix/base/models/orders.py:3267 pretix/base/settings.py:1135
-#: pretix/control/forms/filter.py:637 pretix/control/forms/filter.py:668
+#: pretix/control/forms/filter.py:636 pretix/control/forms/filter.py:667
 #: pretix/control/views/item.py:491
-#: pretix/plugins/checkinlists/exporters.py:534
+#: pretix/plugins/checkinlists/exporters.py:536
 #: pretix/plugins/reports/exporters.py:842
 msgid "City"
 msgstr "Oraș"
@@ -1473,11 +1480,11 @@ msgstr "Oraș"
 #: pretix/base/modelimport_orders.py:244 pretix/base/modelimport_orders.py:390
 #: pretix/base/models/customers.py:314 pretix/base/models/orders.py:1540
 #: pretix/base/models/orders.py:3268 pretix/base/models/orders.py:3269
-#: pretix/base/settings.py:1144 pretix/control/forms/filter.py:642
-#: pretix/control/forms/filter.py:673
+#: pretix/base/settings.py:1144 pretix/control/forms/filter.py:641
+#: pretix/control/forms/filter.py:672
 #: pretix/control/templates/pretixcontrol/order/index.html:959
 #: pretix/control/views/item.py:501
-#: pretix/plugins/checkinlists/exporters.py:535
+#: pretix/plugins/checkinlists/exporters.py:537
 #: pretix/plugins/reports/exporters.py:792
 #: pretix/plugins/reports/exporters.py:837
 #: pretix/plugins/reports/exporters.py:886
@@ -1523,10 +1530,10 @@ msgstr "Destinatar factură:"
 #: pretix/base/exporters/orderlist.py:603
 #: pretix/base/exporters/orderlist.py:643 pretix/base/forms/questions.py:678
 #: pretix/base/modelimport_orders.py:176 pretix/base/modelimport_orders.py:341
-#: pretix/control/forms/filter.py:620 pretix/control/forms/filter.py:655
+#: pretix/control/forms/filter.py:619 pretix/control/forms/filter.py:654
 #: pretix/control/templates/pretixcontrol/order/index.html:951
 #: pretix/control/views/item.py:459
-#: pretix/plugins/checkinlists/exporters.py:516
+#: pretix/plugins/checkinlists/exporters.py:518
 #: pretix/plugins/reports/exporters.py:839
 #: pretix/plugins/reports/exporters.py:885
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:83
@@ -1546,7 +1553,7 @@ msgstr "Strada"
 #: pretix/base/models/customers.py:315 pretix/base/models/orders.py:1541
 #: pretix/base/models/orders.py:3271
 #: pretix/control/templates/pretixcontrol/order/index.html:962
-#: pretix/plugins/checkinlists/exporters.py:536
+#: pretix/plugins/checkinlists/exporters.py:538
 #: pretix/plugins/reports/exporters.py:843
 #: pretix/presale/templates/pretixpresale/event/checkout_confirm.html:95
 #: pretix/presale/templates/pretixpresale/event/order.html:322
@@ -1713,7 +1720,7 @@ msgstr "Nume element"
 #: pretix/base/exporters/orderlist.py:893
 #: pretix/base/exporters/waitinglist.py:112 pretix/base/models/items.py:1147
 #: pretix/base/models/orders.py:1493 pretix/base/models/orders.py:2988
-#: pretix/plugins/checkinlists/exporters.py:693
+#: pretix/plugins/checkinlists/exporters.py:695
 msgid "Variation"
 msgstr "Variație"
 
@@ -1723,7 +1730,7 @@ msgstr "Variație"
 #: pretix/base/models/items.py:489 pretix/base/models/items.py:1151
 #: pretix/base/models/media.py:77 pretix/base/settings.py:203
 #: pretix/base/settings.py:238 pretix/base/settings.py:269
-#: pretix/control/forms/filter.py:1195 pretix/control/forms/filter.py:2012
+#: pretix/control/forms/filter.py:1193 pretix/control/forms/filter.py:2002
 #: pretix/control/templates/pretixcontrol/event/plugins.html:55
 #: pretix/control/templates/pretixcontrol/users/index.html:51
 msgid "Active"
@@ -1847,14 +1854,14 @@ msgstr "Suma maximă pe comandă"
 #: pretix/base/exporters/items.py:89 pretix/base/exporters/orderlist.py:282
 #: pretix/base/modelimport_orders.py:610 pretix/base/models/items.py:656
 #: pretix/base/models/items.py:1241 pretix/base/models/orders.py:282
-#: pretix/plugins/checkinlists/exporters.py:520
+#: pretix/plugins/checkinlists/exporters.py:522
 msgid "Requires special attention"
 msgstr "Necesită o atenție specială"
 
 #: pretix/base/exporters/items.py:90 pretix/base/exporters/orderlist.py:283
 #: pretix/base/modelimport_orders.py:618 pretix/base/models/items.py:663
 #: pretix/base/models/items.py:1248 pretix/base/models/orders.py:289
-#: pretix/plugins/checkinlists/exporters.py:522
+#: pretix/plugins/checkinlists/exporters.py:524
 #, fuzzy
 #| msgid "Check-in list"
 msgid "Check-in text"
@@ -2002,18 +2009,18 @@ msgstr "Total comenzi"
 #: pretix/base/exporters/orderlist.py:1312
 #: pretix/base/exporters/waitinglist.py:120
 #: pretix/base/exporters/waitinglist.py:168 pretix/base/models/orders.py:216
-#: pretix/control/forms/filter.py:1013 pretix/control/forms/filter.py:1192
-#: pretix/control/forms/filter.py:1422 pretix/control/forms/filter.py:1493
-#: pretix/control/forms/filter.py:1566 pretix/control/forms/filter.py:1667
-#: pretix/control/forms/filter.py:2009 pretix/control/forms/filter.py:2090
-#: pretix/control/forms/filter.py:2372
+#: pretix/control/forms/filter.py:1011 pretix/control/forms/filter.py:1190
+#: pretix/control/forms/filter.py:1418 pretix/control/forms/filter.py:1487
+#: pretix/control/forms/filter.py:1559 pretix/control/forms/filter.py:1659
+#: pretix/control/forms/filter.py:1999 pretix/control/forms/filter.py:2079
+#: pretix/control/forms/filter.py:2360
 #: pretix/control/templates/pretixcontrol/boxoffice/payment.html:52
 #: pretix/control/templates/pretixcontrol/checkin/index.html:112
 #: pretix/control/templates/pretixcontrol/events/index.html:90
 #: pretix/control/templates/pretixcontrol/order/index.html:749
 #: pretix/control/templates/pretixcontrol/order/index.html:845
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:26
-#: pretix/control/templates/pretixcontrol/orders/index.html:152
+#: pretix/control/templates/pretixcontrol/orders/index.html:151
 #: pretix/control/templates/pretixcontrol/orders/refunds.html:65
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:39
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:209
@@ -2039,16 +2046,16 @@ msgstr "Stare"
 #: pretix/base/exporters/orderlist.py:446
 #: pretix/base/exporters/orderlist.py:579
 #: pretix/base/exporters/orderlist.py:880 pretix/base/notifications.py:203
-#: pretix/control/forms/filter.py:2333
+#: pretix/control/forms/filter.py:2321
 #: pretix/control/templates/pretixcontrol/order/index.html:182
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:24
-#: pretix/control/templates/pretixcontrol/orders/index.html:141
+#: pretix/control/templates/pretixcontrol/orders/index.html:140
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:206
 #: pretix/control/templates/pretixcontrol/organizers/customer_membership.html:45
 #: pretix/control/templates/pretixcontrol/search/orders.html:57
 #: pretix/plugins/badges/exporters.py:498
 #: pretix/plugins/checkinlists/exporters.py:122
-#: pretix/plugins/checkinlists/exporters.py:518
+#: pretix/plugins/checkinlists/exporters.py:520
 #: pretix/plugins/reports/exporters.py:498
 #: pretix/plugins/reports/exporters.py:561
 #: pretix/plugins/reports/exporters.py:680
@@ -2061,7 +2068,7 @@ msgstr "Data comenzii"
 #: pretix/base/exporters/orderlist.py:447
 #: pretix/base/exporters/orderlist.py:580
 #: pretix/base/exporters/orderlist.py:881
-#: pretix/plugins/checkinlists/exporters.py:519
+#: pretix/plugins/checkinlists/exporters.py:521
 msgid "Order time"
 msgstr "Ora comenzii"
 
@@ -2105,19 +2112,19 @@ msgstr "Numerele facturilor"
 
 #: pretix/base/exporters/orderlist.py:281
 #: pretix/base/exporters/orderlist.py:656 pretix/base/modelimport_orders.py:540
-#: pretix/control/forms/filter.py:584
+#: pretix/control/forms/filter.py:583
 #: pretix/control/templates/pretixcontrol/order/index.html:189
 msgid "Sales channel"
 msgstr "Canalul de vânzări"
 
 #: pretix/base/exporters/orderlist.py:285
 #: pretix/base/exporters/orderlist.py:621 pretix/base/models/orders.py:277
-#: pretix/control/forms/filter.py:240
+#: pretix/control/forms/filter.py:239
 msgid "Follow-up date"
 msgstr "Data urmăririi"
 
 #: pretix/base/exporters/orderlist.py:286
-#: pretix/control/templates/pretixcontrol/orders/index.html:151
+#: pretix/control/templates/pretixcontrol/orders/index.html:150
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:208
 #: pretix/presale/templates/pretixpresale/organizers/customer_orders.html:51
 msgid "Positions"
@@ -2125,7 +2132,7 @@ msgstr "Poziții"
 
 #: pretix/base/exporters/orderlist.py:287
 #: pretix/base/exporters/orderlist.py:658 pretix/base/models/orders.py:321
-#: pretix/control/forms/filter.py:566
+#: pretix/control/forms/filter.py:565
 msgid "Email address verified"
 msgstr "Adresa de e-mail verificată"
 
@@ -2158,8 +2165,8 @@ msgstr "Tipul de taxă"
 #: pretix/control/templates/pretixcontrol/subevents/bulk.html:496
 #: pretix/control/templates/pretixcontrol/subevents/bulk_edit.html:161
 #: pretix/control/templates/pretixcontrol/subevents/detail.html:139
-#: pretix/plugins/checkinlists/exporters.py:374
-#: pretix/plugins/checkinlists/exporters.py:497
+#: pretix/plugins/checkinlists/exporters.py:376
+#: pretix/plugins/checkinlists/exporters.py:499
 #: pretix/plugins/reports/accountingreport.py:314
 msgid "Price"
 msgstr "Preț"
@@ -2187,7 +2194,7 @@ msgstr "anulat"
 
 #: pretix/base/exporters/orderlist.py:575
 #: pretix/base/exporters/orderlist.py:887
-#: pretix/plugins/checkinlists/exporters.py:755
+#: pretix/plugins/checkinlists/exporters.py:757
 msgid "Position ID"
 msgstr "ID-ul poziției"
 
@@ -2204,8 +2211,8 @@ msgstr "ID-ul poziției"
 #: pretix/control/templates/pretixcontrol/search/payments.html:83
 #: pretix/control/templates/pretixcontrol/user/staff_session_edit.html:19
 #: pretix/control/templates/pretixcontrol/user/staff_session_list.html:18
-#: pretix/plugins/checkinlists/exporters.py:510
-#: pretix/plugins/checkinlists/exporters.py:699
+#: pretix/plugins/checkinlists/exporters.py:512
+#: pretix/plugins/checkinlists/exporters.py:701
 msgid "Start date"
 msgstr "Data începerii"
 
@@ -2217,8 +2224,8 @@ msgstr "Data începerii"
 #: pretix/control/templates/pretixcontrol/organizers/detail.html:68
 #: pretix/control/templates/pretixcontrol/user/staff_session_edit.html:21
 #: pretix/control/templates/pretixcontrol/user/staff_session_list.html:20
-#: pretix/plugins/checkinlists/exporters.py:511
-#: pretix/plugins/checkinlists/exporters.py:700
+#: pretix/plugins/checkinlists/exporters.py:513
+#: pretix/plugins/checkinlists/exporters.py:702
 msgid "End date"
 msgstr "Data încheierii"
 
@@ -2226,7 +2233,7 @@ msgstr "Data încheierii"
 #: pretix/base/exporters/orderlist.py:891 pretix/base/modelimport_orders.py:109
 #: pretix/base/modelimport_vouchers.py:174 pretix/base/models/items.py:794
 #: pretix/base/models/vouchers.py:250 pretix/base/models/waitinglist.py:91
-#: pretix/control/forms/filter.py:2133 pretix/control/forms/filter.py:2388
+#: pretix/control/forms/filter.py:2121 pretix/control/forms/filter.py:2376
 #: pretix/control/forms/orders.py:321 pretix/control/forms/vouchers.py:67
 #: pretix/control/templates/pretixcontrol/checkin/checkins.html:66
 #: pretix/control/templates/pretixcontrol/item/base.html:3
@@ -2237,10 +2244,10 @@ msgstr "Data încheierii"
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:134
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:165
 #: pretix/control/views/vouchers.py:119 pretix/control/views/waitinglist.py:314
-#: pretix/plugins/checkinlists/exporters.py:374
-#: pretix/plugins/checkinlists/exporters.py:497
-#: pretix/plugins/checkinlists/exporters.py:692
-#: pretix/plugins/checkinlists/exporters.py:757
+#: pretix/plugins/checkinlists/exporters.py:376
+#: pretix/plugins/checkinlists/exporters.py:499
+#: pretix/plugins/checkinlists/exporters.py:694
+#: pretix/plugins/checkinlists/exporters.py:759
 #: pretix/plugins/reports/accountingreport.py:270
 #: pretix/plugins/reports/exporters.py:375
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:100
@@ -2254,12 +2261,12 @@ msgstr "Produs"
 #: pretix/base/exporters/orderlist.py:600 pretix/base/forms/questions.py:661
 #: pretix/base/modelimport_orders.py:313 pretix/base/models/customers.py:300
 #: pretix/base/models/orders.py:1502 pretix/base/pdf.py:172
-#: pretix/control/forms/filter.py:647 pretix/control/forms/organizer.py:982
+#: pretix/control/forms/filter.py:646 pretix/control/forms/organizer.py:982
 #: pretix/control/templates/pretixcontrol/order/index.html:520
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:120
 #: pretix/control/views/item.py:435 pretix/plugins/badges/exporters.py:495
 #: pretix/plugins/checkinlists/exporters.py:120
-#: pretix/plugins/checkinlists/exporters.py:491
+#: pretix/plugins/checkinlists/exporters.py:493
 #: pretix/plugins/ticketoutputpdf/exporters.py:94
 #: pretix/presale/templates/pretixpresale/event/fragment_cart.html:166
 #: pretix/presale/templates/pretixpresale/event/fragment_cart.html:169
@@ -2291,41 +2298,41 @@ msgstr "Bon"
 msgid "Pseudonymization ID"
 msgstr "ID de pseudonimizare"
 
-#: pretix/base/exporters/orderlist.py:611 pretix/control/forms/filter.py:677
+#: pretix/base/exporters/orderlist.py:611 pretix/control/forms/filter.py:676
 #: pretix/control/templates/pretixcontrol/order/change.html:280
 msgid "Ticket secret"
 msgstr "Cheie secretă bilet"
 
 #: pretix/base/exporters/orderlist.py:612 pretix/base/modelimport_orders.py:570
 #: pretix/base/modelimport_vouchers.py:272
-#: pretix/plugins/checkinlists/exporters.py:523
+#: pretix/plugins/checkinlists/exporters.py:525
 msgid "Seat ID"
 msgstr "ID scaun"
 
 #: pretix/base/exporters/orderlist.py:613
-#: pretix/plugins/checkinlists/exporters.py:524
+#: pretix/plugins/checkinlists/exporters.py:526
 msgid "Seat name"
 msgstr "Numele scaunului"
 
 #: pretix/base/exporters/orderlist.py:614
-#: pretix/plugins/checkinlists/exporters.py:525
+#: pretix/plugins/checkinlists/exporters.py:527
 msgid "Seat zone"
 msgstr "Zona scaunului"
 
 #: pretix/base/exporters/orderlist.py:615
-#: pretix/plugins/checkinlists/exporters.py:526
+#: pretix/plugins/checkinlists/exporters.py:528
 msgid "Seat row"
 msgstr "Rândul de scaune"
 
 #: pretix/base/exporters/orderlist.py:616
-#: pretix/plugins/checkinlists/exporters.py:527
+#: pretix/plugins/checkinlists/exporters.py:529
 msgid "Seat number"
 msgstr "Numărul scaunului"
 
 #: pretix/base/exporters/orderlist.py:617
 #: pretix/control/templates/pretixcontrol/order/change.html:224
-#: pretix/plugins/checkinlists/exporters.py:426
-#: pretix/plugins/checkinlists/exporters.py:528
+#: pretix/plugins/checkinlists/exporters.py:428
+#: pretix/plugins/checkinlists/exporters.py:530
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:108
 #: pretix/plugins/statistics/templates/pretixplugins/statistics/index.html:110
 msgid "Blocked"
@@ -2334,8 +2341,8 @@ msgstr "Blocat"
 #: pretix/base/exporters/orderlist.py:618 pretix/base/modelimport_orders.py:500
 #: pretix/base/models/orders.py:2512
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:117
-#: pretix/plugins/checkinlists/exporters.py:529
-#: pretix/plugins/checkinlists/exporters.py:702
+#: pretix/plugins/checkinlists/exporters.py:531
+#: pretix/plugins/checkinlists/exporters.py:704
 #: pretix/presale/templates/pretixpresale/organizers/customer_membership.html:46
 #: pretix/presale/templates/pretixpresale/organizers/customer_memberships.html:55
 msgid "Valid from"
@@ -2346,8 +2353,8 @@ msgstr "Valid de la"
 #: pretix/base/models/vouchers.py:221
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:118
 #: pretix/control/views/vouchers.py:119
-#: pretix/plugins/checkinlists/exporters.py:530
-#: pretix/plugins/checkinlists/exporters.py:703
+#: pretix/plugins/checkinlists/exporters.py:532
+#: pretix/plugins/checkinlists/exporters.py:705
 #: pretix/presale/templates/pretixpresale/organizers/customer_membership.html:48
 #: pretix/presale/templates/pretixpresale/organizers/customer_memberships.html:61
 msgid "Valid until"
@@ -2420,12 +2427,11 @@ msgstr ""
 #: pretix/base/models/items.py:468 pretix/base/models/items.py:2031
 #: pretix/base/models/orders.py:233 pretix/base/models/orders.py:3082
 #: pretix/base/models/vouchers.py:181 pretix/base/models/waitinglist.py:55
-#: pretix/base/notifications.py:187 pretix/control/forms/filter.py:988
+#: pretix/base/notifications.py:187 pretix/control/forms/filter.py:986
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:205
 #: pretix/control/templates/pretixcontrol/organizers/customer_membership.html:42
 #: pretix/control/templates/pretixcontrol/search/orders.html:51
 #: pretix/multidomain/models.py:65
-#: pretix/plugins/reports/accountingreport.py:111
 #: pretix/plugins/reports/accountingreport.py:270
 #: pretix/presale/templates/pretixpresale/event/waitinglist.html:11
 #: pretix/presale/templates/pretixpresale/organizers/customer_membership.html:95
@@ -2563,7 +2569,7 @@ msgstr "Rapoarte de rambursare"
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:119
 #: pretix/control/templates/pretixcontrol/search/payments.html:78
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:15
-#: pretix/plugins/checkinlists/exporters.py:372
+#: pretix/plugins/checkinlists/exporters.py:374
 #: pretix/presale/templates/pretixpresale/event/order.html:66
 #: pretix/presale/templates/pretixpresale/organizers/customer_membership.html:70
 #: pretix/presale/templates/pretixpresale/organizers/customer_orders.html:23
@@ -2597,8 +2603,8 @@ msgstr "Cod status"
 #: pretix/base/exporters/orderlist.py:1077
 #: pretix/base/exporters/orderlist.py:1215
 #: pretix/base/exporters/orderlist.py:1259 pretix/base/models/orders.py:1734
-#: pretix/base/models/orders.py:2137 pretix/control/forms/filter.py:1045
-#: pretix/control/forms/filter.py:1048
+#: pretix/base/models/orders.py:2137 pretix/control/forms/filter.py:1043
+#: pretix/control/forms/filter.py:1046
 #: pretix/control/templates/pretixcontrol/order/index.html:750
 #: pretix/control/templates/pretixcontrol/order/index.html:846
 #: pretix/control/templates/pretixcontrol/orders/refunds.html:70
@@ -2716,16 +2722,16 @@ msgstr "Codul cardului cadou"
 #: pretix/base/exporters/orderlist.py:1213
 #: pretix/base/exporters/orderlist.py:1302
 #: pretix/base/exporters/orderlist.py:1305
-#: pretix/base/models/memberships.py:120 pretix/control/forms/filter.py:244
-#: pretix/control/forms/filter.py:1413 pretix/control/forms/filter.py:1416
+#: pretix/base/models/memberships.py:120 pretix/control/forms/filter.py:243
+#: pretix/control/forms/filter.py:1409 pretix/control/forms/filter.py:1412
 #: pretix/control/templates/pretixcontrol/event/live.html:75
 msgid "Test mode"
 msgstr "Mod testare"
 
 #: pretix/base/exporters/orderlist.py:1218 pretix/base/models/organizer.py:96
 #: pretix/control/forms/event.py:110 pretix/control/forms/event.py:116
-#: pretix/control/forms/filter.py:881 pretix/control/forms/filter.py:1000
-#: pretix/control/forms/filter.py:1682
+#: pretix/control/forms/filter.py:880 pretix/control/forms/filter.py:998
+#: pretix/control/forms/filter.py:1674
 #: pretix/control/templates/pretixcontrol/email_setup.html:6
 #: pretix/control/templates/pretixcontrol/email_setup_simple.html:6
 #: pretix/control/templates/pretixcontrol/email_setup_smtp.html:6
@@ -2743,7 +2749,7 @@ msgstr "Organizator"
 #: pretix/control/templates/pretixcontrol/checkin/index.html:145
 #: pretix/control/templates/pretixcontrol/order/index.html:24
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:38
-#: pretix/control/templates/pretixcontrol/orders/index.html:190
+#: pretix/control/templates/pretixcontrol/orders/index.html:189
 #: pretix/control/templates/pretixcontrol/orders/refunds.html:86
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:133
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:222
@@ -2800,13 +2806,13 @@ msgid "Defaults to the time of report."
 msgstr ""
 
 #: pretix/base/exporters/orderlist.py:1304
-#: pretix/base/exporters/orderlist.py:1314 pretix/control/forms/filter.py:518
-#: pretix/control/forms/filter.py:1194 pretix/control/forms/filter.py:1415
-#: pretix/control/forms/filter.py:1424 pretix/control/forms/filter.py:1496
-#: pretix/control/forms/filter.py:1506 pretix/control/forms/filter.py:1569
-#: pretix/control/forms/filter.py:2011 pretix/control/forms/filter.py:2020
-#: pretix/control/forms/filter.py:2092 pretix/control/forms/filter.py:2105
-#: pretix/control/forms/filter.py:2613 pretix/control/forms/filter.py:2632
+#: pretix/base/exporters/orderlist.py:1314 pretix/control/forms/filter.py:517
+#: pretix/control/forms/filter.py:1192 pretix/control/forms/filter.py:1411
+#: pretix/control/forms/filter.py:1420 pretix/control/forms/filter.py:1490
+#: pretix/control/forms/filter.py:1500 pretix/control/forms/filter.py:1562
+#: pretix/control/forms/filter.py:2001 pretix/control/forms/filter.py:2010
+#: pretix/control/forms/filter.py:2081 pretix/control/forms/filter.py:2094
+#: pretix/control/forms/filter.py:2600 pretix/control/forms/filter.py:2619
 #: pretix/control/templates/pretixcontrol/checkin/lists.html:135
 #: pretix/control/templates/pretixcontrol/checkin/lists.html:141
 #: pretix/control/templates/pretixcontrol/items/discounts.html:113
@@ -2821,25 +2827,25 @@ msgstr ""
 msgid "All"
 msgstr "Toate"
 
-#: pretix/base/exporters/orderlist.py:1306 pretix/control/forms/filter.py:1417
+#: pretix/base/exporters/orderlist.py:1306 pretix/control/forms/filter.py:1413
 msgid "Live"
 msgstr "Live"
 
-#: pretix/base/exporters/orderlist.py:1315 pretix/control/forms/filter.py:1425
+#: pretix/base/exporters/orderlist.py:1315 pretix/control/forms/filter.py:1421
 #: pretix/control/templates/pretixcontrol/pdf/index.html:252
 msgid "Empty"
 msgstr "Gol"
 
-#: pretix/base/exporters/orderlist.py:1316 pretix/control/forms/filter.py:1426
+#: pretix/base/exporters/orderlist.py:1316 pretix/control/forms/filter.py:1422
 msgid "Valid and with value"
 msgstr "Valabil și cu valoare"
 
-#: pretix/base/exporters/orderlist.py:1317 pretix/control/forms/filter.py:1427
+#: pretix/base/exporters/orderlist.py:1317 pretix/control/forms/filter.py:1423
 msgid "Expired and with value"
 msgstr "Expirat și cu valoare"
 
-#: pretix/base/exporters/orderlist.py:1318 pretix/control/forms/filter.py:227
-#: pretix/control/forms/filter.py:1428 pretix/control/forms/filter.py:2097
+#: pretix/base/exporters/orderlist.py:1318 pretix/control/forms/filter.py:226
+#: pretix/control/forms/filter.py:1424 pretix/control/forms/filter.py:2086
 #: pretix/control/templates/pretixcontrol/items/question.html:31
 #: pretix/control/templates/pretixcontrol/orders/fragment_order_status.html:37
 #: pretix/control/templates/pretixcontrol/orders/overview.html:78
@@ -3013,7 +3019,7 @@ msgstr "Prioritate"
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:18
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:114
 #: pretix/control/views/vouchers.py:119 pretix/control/views/waitinglist.py:314
-#: pretix/plugins/checkinlists/exporters.py:517
+#: pretix/plugins/checkinlists/exporters.py:519
 #: pretix/presale/templates/pretixpresale/event/fragment_cart_box.html:74
 #: pretix/presale/templates/pretixpresale/event/fragment_cart_box.html:76
 #: pretix/presale/templates/pretixpresale/event/fragment_voucher_form.html:12
@@ -3265,7 +3271,7 @@ msgid "Available placeholders: {list}"
 msgstr "Șabloane disponibile: {list}"
 
 #: pretix/base/forms/widgets.py:214 pretix/base/models/items.py:1655
-#: pretix/base/reldate.py:216 pretix/plugins/checkinlists/exporters.py:751
+#: pretix/base/reldate.py:216 pretix/plugins/checkinlists/exporters.py:753
 #: pretix/plugins/sendmail/templates/pretixplugins/sendmail/rule_create.html:40
 #: pretix/plugins/sendmail/templates/pretixplugins/sendmail/rule_update.html:54
 msgid "Time"
@@ -3689,10 +3695,10 @@ msgstr "Trebuie să selectați o variație pentru acest produs."
 #: pretix/base/modelimport_orders.py:206 pretix/base/modelimport_orders.py:217
 #: pretix/base/modelimport_orders.py:228 pretix/base/modelimport_orders.py:244
 #: pretix/base/modelimport_orders.py:263 pretix/base/modelimport_orders.py:288
-#: pretix/base/modelimport_orders.py:299 pretix/control/forms/filter.py:620
-#: pretix/control/forms/filter.py:624 pretix/control/forms/filter.py:628
-#: pretix/control/forms/filter.py:632 pretix/control/forms/filter.py:637
-#: pretix/control/forms/filter.py:642
+#: pretix/base/modelimport_orders.py:299 pretix/control/forms/filter.py:619
+#: pretix/control/forms/filter.py:623 pretix/control/forms/filter.py:627
+#: pretix/control/forms/filter.py:631 pretix/control/forms/filter.py:636
+#: pretix/control/forms/filter.py:641
 msgid "Invoice address"
 msgstr "Adresa facturii"
 
@@ -3708,16 +3714,16 @@ msgstr "Statele nu sunt acceptate pentru această țară."
 msgid "Please enter a valid state."
 msgstr "Vă rugăm să introduceți un stat valid."
 
-#: pretix/base/modelimport_orders.py:325 pretix/control/forms/filter.py:651
+#: pretix/base/modelimport_orders.py:325 pretix/control/forms/filter.py:650
 msgid "Attendee email address"
 msgstr "Adresa de e-mail a participantului"
 
 #: pretix/base/modelimport_orders.py:341 pretix/base/modelimport_orders.py:352
 #: pretix/base/modelimport_orders.py:363 pretix/base/modelimport_orders.py:374
 #: pretix/base/modelimport_orders.py:390 pretix/base/modelimport_orders.py:409
-#: pretix/control/forms/filter.py:655 pretix/control/forms/filter.py:659
-#: pretix/control/forms/filter.py:663 pretix/control/forms/filter.py:668
-#: pretix/control/forms/filter.py:673
+#: pretix/control/forms/filter.py:654 pretix/control/forms/filter.py:658
+#: pretix/control/forms/filter.py:662 pretix/control/forms/filter.py:667
+#: pretix/control/forms/filter.py:672
 #: pretix/control/templates/pretixcontrol/order/index.html:557
 #: pretix/presale/templates/pretixpresale/event/fragment_cart.html:197
 #: pretix/presale/templates/pretixpresale/event/fragment_cart.html:200
@@ -3833,7 +3839,7 @@ msgid "Maximum discount budget"
 msgstr "Valoarea maximă a reducerii"
 
 #: pretix/base/modelimport_vouchers.py:119 pretix/base/models/vouchers.py:225
-#: pretix/control/forms/filter.py:2106
+#: pretix/control/forms/filter.py:2095
 msgid "Reserve ticket from quota"
 msgstr "Rezervă bilet din cotă"
 
@@ -3939,7 +3945,7 @@ msgstr "Dacă este dezactivată, nu veți primi nicio notificare."
 
 #: pretix/base/models/auth.py:283
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:23
-#: pretix/control/templates/pretixcontrol/orders/index.html:136
+#: pretix/control/templates/pretixcontrol/orders/index.html:135
 #: pretix/control/templates/pretixcontrol/search/orders.html:54
 #: pretix/control/templates/pretixcontrol/user/staff_session_edit.html:23
 #: pretix/control/templates/pretixcontrol/user/staff_session_list.html:15
@@ -3969,7 +3975,7 @@ msgid "All products (including newly created ones)"
 msgstr "Toate produsele (inclusiv cele nou create)"
 
 #: pretix/base/models/checkin.py:56 pretix/plugins/badges/exporters.py:436
-#: pretix/plugins/checkinlists/exporters.py:842
+#: pretix/plugins/checkinlists/exporters.py:844
 msgid "Limit to products"
 msgstr "Limitare la produse"
 
@@ -4145,15 +4151,6 @@ msgid ""
 "underscores. It must start and end with a letter or number."
 msgstr ""
 
-#: pretix/base/models/customers.py:195 pretix/control/forms/filter.py:1498
-#: pretix/control/forms/filter.py:1571
-#: pretix/control/templates/pretixcontrol/organizers/customer.html:42
-#: pretix/control/templates/pretixcontrol/organizers/giftcard_acceptance_list.html:56
-#: pretix/control/templates/pretixcontrol/organizers/giftcard_acceptance_list.html:135
-#: pretix/control/templates/pretixcontrol/organizers/reusable_medium.html:35
-msgid "disabled"
-msgstr "dezactivat"
-
 #: pretix/base/models/customers.py:310 pretix/base/models/orders.py:1536
 #: pretix/base/models/orders.py:3262 pretix/base/settings.py:1111
 msgid "Company name"
@@ -4238,11 +4235,11 @@ msgid "This identifier is already used for a different question."
 msgstr "Acest identificator este deja utilizat pentru o altă întrebare."
 
 #: pretix/base/models/devices.py:113 pretix/control/forms/checkin.py:196
-#: pretix/control/forms/checkin.py:217 pretix/control/forms/filter.py:2398
-#: pretix/control/forms/filter.py:2445 pretix/control/forms/filter.py:2606
+#: pretix/control/forms/checkin.py:217 pretix/control/forms/filter.py:2386
+#: pretix/control/forms/filter.py:2433 pretix/control/forms/filter.py:2593
 #: pretix/control/templates/pretixcontrol/checkin/checkins.html:67
 #: pretix/control/templates/pretixcontrol/organizers/gates.html:16
-#: pretix/plugins/checkinlists/exporters.py:763
+#: pretix/plugins/checkinlists/exporters.py:765
 msgid "Gate"
 msgstr "Poartă acces"
 
@@ -4471,7 +4468,7 @@ msgid "Plugins"
 msgstr "Plugin-uri"
 
 #: pretix/base/models/event.py:631 pretix/base/pdf.py:229
-#: pretix/control/forms/event.py:273 pretix/control/forms/filter.py:1677
+#: pretix/control/forms/event.py:273 pretix/control/forms/filter.py:1669
 #: pretix/control/templates/pretixcontrol/event/index.html:13
 #: pretix/control/views/dashboards.py:543
 #: pretix/presale/templates/pretixpresale/event/index.html:31
@@ -5087,10 +5084,10 @@ msgstr ""
 
 #: pretix/base/models/items.py:617
 msgid ""
-"If this product is part of an order, the order will be put into an "
-"\"approval\" state and will need to be confirmed by you before it can be "
-"paid and completed. You can use this e.g. for discounted tickets that are "
-"only available to specific groups."
+"If this product is part of an order, the order will be put into an \"approval"
+"\" state and will need to be confirmed by you before it can be paid and "
+"completed. You can use this e.g. for discounted tickets that are only "
+"available to specific groups."
 msgstr ""
 "În cazul în care acest produs face parte dintr-o comandă, comanda va fi "
 "plasată în starea de \"aprobare\" și va trebui să fie confirmată de dvs. "
@@ -5325,7 +5322,7 @@ msgid ""
 msgstr ""
 
 #: pretix/base/models/items.py:795 pretix/base/models/items.py:1701
-#: pretix/control/forms/filter.py:420 pretix/control/forms/filter.py:1897
+#: pretix/control/forms/filter.py:419 pretix/control/forms/filter.py:1887
 #: pretix/control/forms/item.py:272 pretix/control/navigation.py:138
 #: pretix/control/navigation.py:147
 #: pretix/control/templates/pretixcontrol/checkin/lists.html:104
@@ -5940,17 +5937,17 @@ msgstr "în așteptare"
 msgid "paid"
 msgstr "plătită"
 
-#: pretix/base/models/orders.py:204 pretix/control/forms/filter.py:1572
+#: pretix/base/models/orders.py:204 pretix/control/forms/filter.py:1565
 #: pretix/control/templates/pretixcontrol/organizers/reusable_medium.html:37
 msgid "expired"
 msgstr "expirat"
 
-#: pretix/base/models/orders.py:254 pretix/control/forms/filter.py:560
+#: pretix/base/models/orders.py:254 pretix/control/forms/filter.py:559
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:64
 msgid "Locale"
 msgstr "Local"
 
-#: pretix/base/models/orders.py:269 pretix/control/forms/filter.py:571
+#: pretix/base/models/orders.py:269 pretix/control/forms/filter.py:570
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/refund_export.html:57
 msgid "Total amount"
 msgstr "Valoare totală"
@@ -6993,7 +6990,7 @@ msgstr "Total net"
 msgid "Pending amount"
 msgstr "Suma în curs de plată"
 
-#: pretix/base/notifications.py:204 pretix/control/forms/filter.py:211
+#: pretix/base/notifications.py:204 pretix/control/forms/filter.py:210
 #: pretix/control/forms/modelimport.py:81
 msgid "Order status"
 msgstr "Status comandă"
@@ -7167,15 +7164,15 @@ msgstr "Calculați taxa din valoarea totală, inclusiv taxa."
 #, python-brace-format
 msgid ""
 "We recommend to enable this if you want your users to pay the payment fees "
-"of your payment provider. <a href=\"{docs_url}\" target=\"_blank\" "
-"rel=\"noopener\">Click here for detailed information on what this does.</a> "
+"of your payment provider. <a href=\"{docs_url}\" target=\"_blank\" rel="
+"\"noopener\">Click here for detailed information on what this does.</a> "
 "Don't forget to set the correct fees above!"
 msgstr ""
 "Vă recomandăm să activați această opțiune dacă doriți ca utilizatorii dvs. "
-"să achite comisioanele de plată ale procesatorului dvs. de plăți. <a "
-"href=\"{docs_url}\" target=\"_blank\" rel=\"noopener\">Faceți click aici "
-"pentru informații detaliate despre acest lucru.</a> Nu uitați să setați "
-"taxele corecte mai sus!"
+"să achite comisioanele de plată ale procesatorului dvs. de plăți. <a href="
+"\"{docs_url}\" target=\"_blank\" rel=\"noopener\">Faceți click aici pentru "
+"informații detaliate despre acest lucru.</a> Nu uitați să setați taxele "
+"corecte mai sus!"
 
 #: pretix/base/payment.py:394
 msgid "Text on invoices"
@@ -7615,7 +7612,7 @@ msgid "Event begin weekday"
 msgstr "Data de începere a evenimentului"
 
 #: pretix/base/pdf.py:266 pretix/base/pdf.py:295
-#: pretix/base/services/checkin.py:362 pretix/control/forms/filter.py:1234
+#: pretix/base/services/checkin.py:362 pretix/control/forms/filter.py:1232
 msgid "Friday"
 msgstr "Vineri"
 
@@ -7707,8 +7704,8 @@ msgstr ""
 "Supliment 1\n"
 "Supliment 2"
 
-#: pretix/base/pdf.py:372 pretix/control/forms/filter.py:1375
-#: pretix/control/forms/filter.py:1377
+#: pretix/base/pdf.py:372 pretix/control/forms/filter.py:1372
+#: pretix/control/forms/filter.py:1374
 #: pretix/control/templates/pretixcontrol/organizers/index.html:42
 msgid "Organizer name"
 msgstr "Numele organizatorului"
@@ -7867,7 +7864,7 @@ msgstr "Dl Popescu"
 #: pretix/base/pdf.py:655 pretix/base/pdf.py:662
 #: pretix/plugins/badges/exporters.py:501
 #: pretix/plugins/checkinlists/exporters.py:124
-#: pretix/plugins/checkinlists/exporters.py:495
+#: pretix/plugins/checkinlists/exporters.py:497
 #: pretix/plugins/ticketoutputpdf/exporters.py:99
 #, python-brace-format
 msgid "Attendee name: {part}"
@@ -7962,7 +7959,7 @@ msgid "Event canceled"
 msgstr "Eveniment anulat"
 
 #: pretix/base/services/cart.py:101 pretix/base/services/modelimport.py:194
-#: pretix/base/services/orders.py:150
+#: pretix/base/services/orders.py:151
 msgid ""
 "We were not able to process your request completely as the server was too "
 "busy. Please try again."
@@ -7983,7 +7980,7 @@ msgctxt "subevent"
 msgid "No date was specified."
 msgstr "Nu a fost specificată nicio dată."
 
-#: pretix/base/services/cart.py:107 pretix/base/services/orders.py:187
+#: pretix/base/services/cart.py:107 pretix/base/services/orders.py:188
 msgid "You selected a product which is not available for sale."
 msgstr "Ați selectat un produs care nu este disponibil pentru vânzare."
 
@@ -8040,7 +8037,7 @@ msgstr[0] "Nu puteți selecta mai mult de %s articole pe comandă."
 msgstr[1] "Nu puteți selecta mai mult de %s articole pe comandă."
 msgstr[2] "Nu puteți selecta mai mult de %s articole pe comandă."
 
-#: pretix/base/services/cart.py:130 pretix/base/services/orders.py:1539
+#: pretix/base/services/cart.py:130 pretix/base/services/orders.py:1541
 #, fuzzy, python-format
 #| msgid ""
 #| "You cannot select more than %(max)s items of the product %(product)s."
@@ -8054,7 +8051,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Nu puteți selecta mai mult de %(max)s articole din produsul %(product)s."
 
-#: pretix/base/services/cart.py:135 pretix/base/services/orders.py:1544
+#: pretix/base/services/cart.py:135 pretix/base/services/orders.py:1546
 #, fuzzy, python-format
 #| msgid ""
 #| "You need to select at least %(min)s items of the product %(product)s."
@@ -8089,7 +8086,7 @@ msgstr[2] ""
 "Am eliminat %(product)s din coșul dvs. de cumpărături deoarece nu puteți "
 "cumpăra mai puțin de %(min)s articole din acesta."
 
-#: pretix/base/services/cart.py:144 pretix/base/services/orders.py:153
+#: pretix/base/services/cart.py:144 pretix/base/services/orders.py:154
 #: pretix/presale/templates/pretixpresale/event/index.html:167
 #: pretix/presale/views/waiting.py:145 pretix/presale/views/widget.py:763
 #, fuzzy
@@ -8123,7 +8120,7 @@ msgstr ""
 "Perioada de pre-sale pentru acest eveniment nu a început încă. Pozițiile "
 "afectate au fost eliminate din coșul dvs. de cumpărături."
 
-#: pretix/base/services/cart.py:151 pretix/base/services/orders.py:181
+#: pretix/base/services/cart.py:151 pretix/base/services/orders.py:182
 #, fuzzy
 #| msgid ""
 #| "The presale period for one of the events in your cart has ended. The "
@@ -8149,7 +8146,7 @@ msgstr "Prețul introdus este prea mare."
 msgid "This voucher code is not known in our database."
 msgstr "Acest cod voucher nu este cunoscut în baza noastră de date."
 
-#: pretix/base/services/cart.py:157 pretix/base/services/orders.py:156
+#: pretix/base/services/cart.py:157 pretix/base/services/orders.py:157
 #, python-format
 msgid ""
 "The voucher code \"%(voucher)s\" can only be used if you select at least "
@@ -8256,15 +8253,15 @@ msgctxt "subevent"
 msgid "The selected event date is not active."
 msgstr "Data evenimentului selectat nu este activă."
 
-#: pretix/base/services/cart.py:194 pretix/base/services/orders.py:188
+#: pretix/base/services/cart.py:194 pretix/base/services/orders.py:189
 msgid "You can not select an add-on for the selected product."
 msgstr "Nu puteți selecta un supliment add-on pentru produsul selectat."
 
-#: pretix/base/services/cart.py:195 pretix/base/services/orders.py:189
+#: pretix/base/services/cart.py:195 pretix/base/services/orders.py:190
 msgid "You can not select two variations of the same add-on product."
 msgstr "Nu puteți selecta două variante ale aceluiași produs adițional."
 
-#: pretix/base/services/cart.py:197 pretix/base/services/orders.py:191
+#: pretix/base/services/cart.py:197 pretix/base/services/orders.py:192
 #, fuzzy, python-format
 #| msgid ""
 #| "You can select at most %(max)s add-ons from the category %(cat)s for the "
@@ -8285,7 +8282,7 @@ msgstr[2] ""
 "Puteți selecta cel mult %(max)s suplimente din categoria %(cat)s pentru "
 "produsul %(base)s."
 
-#: pretix/base/services/cart.py:202 pretix/base/services/orders.py:196
+#: pretix/base/services/cart.py:202 pretix/base/services/orders.py:197
 #, fuzzy, python-format
 #| msgid ""
 #| "You need to select at least %(min)s add-ons from the category %(cat)s for "
@@ -8306,7 +8303,7 @@ msgstr[2] ""
 "Trebuie să selectați cel puțin %(min)s suplimente din categoria %(cat)s "
 "pentru produsul %(base)s."
 
-#: pretix/base/services/cart.py:206 pretix/base/services/orders.py:200
+#: pretix/base/services/cart.py:206 pretix/base/services/orders.py:201
 #, fuzzy, python-format
 #| msgid ""
 #| "You can select every add-ons from the category %(cat)s for the product "
@@ -8448,27 +8445,27 @@ msgstr "numărul de intrări de astăzi"
 msgid "week day"
 msgstr "ziua săptămânii"
 
-#: pretix/base/services/checkin.py:358 pretix/control/forms/filter.py:1230
+#: pretix/base/services/checkin.py:358 pretix/control/forms/filter.py:1228
 msgid "Monday"
 msgstr "Luni"
 
-#: pretix/base/services/checkin.py:359 pretix/control/forms/filter.py:1231
+#: pretix/base/services/checkin.py:359 pretix/control/forms/filter.py:1229
 msgid "Tuesday"
 msgstr "Marți"
 
-#: pretix/base/services/checkin.py:360 pretix/control/forms/filter.py:1232
+#: pretix/base/services/checkin.py:360 pretix/control/forms/filter.py:1230
 msgid "Wednesday"
 msgstr "Miercuri"
 
-#: pretix/base/services/checkin.py:361 pretix/control/forms/filter.py:1233
+#: pretix/base/services/checkin.py:361 pretix/control/forms/filter.py:1231
 msgid "Thursday"
 msgstr "Joi"
 
-#: pretix/base/services/checkin.py:363 pretix/control/forms/filter.py:1235
+#: pretix/base/services/checkin.py:363 pretix/control/forms/filter.py:1233
 msgid "Saturday"
 msgstr "Sâmbătă"
 
-#: pretix/base/services/checkin.py:364 pretix/control/forms/filter.py:1236
+#: pretix/base/services/checkin.py:364 pretix/control/forms/filter.py:1234
 msgid "Sunday"
 msgstr "Duminică"
 
@@ -8851,7 +8848,7 @@ msgstr ""
 "Eroare la importul valorii \"{value}\" pentru coloana \"{column}\" în linia "
 "\"{line}\": {message}"
 
-#: pretix/base/services/modelimport.py:89 pretix/base/services/orders.py:1548
+#: pretix/base/services/modelimport.py:89 pretix/base/services/orders.py:1550
 #, python-format
 msgid "Orders cannot have more than %(max)s positions."
 msgstr ""
@@ -8868,7 +8865,7 @@ msgstr "Date nevalabile în rândul {row}: {message}"
 msgid "A voucher cannot be created without a code."
 msgstr "Un voucher nu poate fi șters dacă a fost deja utilizat."
 
-#: pretix/base/services/orders.py:129
+#: pretix/base/services/orders.py:130
 msgid ""
 "Some of the products you selected were no longer available. Please see below "
 "for details."
@@ -8876,7 +8873,7 @@ msgstr ""
 "Unele dintre produsele pe care le-ați selectat nu mai erau disponibile. Vă "
 "rugăm să consultați mai jos pentru detalii."
 
-#: pretix/base/services/orders.py:133
+#: pretix/base/services/orders.py:134
 msgid ""
 "Some of the products you selected were no longer available in the quantity "
 "you selected. Please see below for details."
@@ -8885,7 +8882,7 @@ msgstr ""
 "cantitatea pe care ați selectat-o. Vă rugăm să consultați mai jos pentru "
 "detalii."
 
-#: pretix/base/services/orders.py:137
+#: pretix/base/services/orders.py:138
 msgid ""
 "The price of some of the items in your cart has changed in the meantime. "
 "Please see below for details."
@@ -8893,21 +8890,21 @@ msgstr ""
 "Între timp, prețul unora dintre articolele din coșul dvs. s-a modificat. Vă "
 "rugăm să consultați mai jos pentru detalii."
 
-#: pretix/base/services/orders.py:140
+#: pretix/base/services/orders.py:141
 msgid "An internal error occurred, please try again."
 msgstr "A apărut o eroare internă, vă rugăm să încercați din nou."
 
-#: pretix/base/services/orders.py:141
+#: pretix/base/services/orders.py:142
 msgid ""
 "This order was changed by someone else simultaneously. Please check if your "
 "changes are still accurate and try again."
 msgstr ""
 
-#: pretix/base/services/orders.py:143
+#: pretix/base/services/orders.py:144
 msgid "Your cart is empty."
 msgstr "Coșul de cumpărături este gol."
 
-#: pretix/base/services/orders.py:145
+#: pretix/base/services/orders.py:146
 #, fuzzy, python-format
 #| msgid ""
 #| "You cannot select more than %(max)s items of the product %(product)s. We "
@@ -8928,13 +8925,13 @@ msgstr[2] ""
 "Nu puteți selecta mai mult de %(max)s articole din produsul %(product)s. Am "
 "eliminat surplusul de articole din coșul dumneavoastră."
 
-#: pretix/base/services/orders.py:154
+#: pretix/base/services/orders.py:155
 #, fuzzy
 #| msgid "The presale period has ended."
 msgid "The booking period has ended."
 msgstr "Perioada de pre-sale s-a încheiat."
 
-#: pretix/base/services/orders.py:160
+#: pretix/base/services/orders.py:161
 msgid ""
 "The voucher code used for one of the items in your cart is not known in our "
 "database."
@@ -8942,7 +8939,7 @@ msgstr ""
 "Codul de voucher utilizat pentru unul dintre articolele din coșul "
 "dumneavoastră nu este cunoscut în baza noastră de date."
 
-#: pretix/base/services/orders.py:162
+#: pretix/base/services/orders.py:163
 msgid ""
 "The voucher code used for one of the items in your cart has already been "
 "used the maximum number of times allowed. We removed this item from your "
@@ -8952,7 +8949,7 @@ msgstr ""
 "dumneavoastră a fost deja utilizat de numărul maxim permis. Am eliminat "
 "acest articol din coșul dumneavoastră."
 
-#: pretix/base/services/orders.py:166
+#: pretix/base/services/orders.py:167
 msgid ""
 "The voucher code used for one of the items in your cart has already been too "
 "often. We adjusted the price of the item in your cart."
@@ -8961,7 +8958,7 @@ msgstr ""
 "fost deja prea des folosit. Am ajustat prețul articolului din coșul "
 "dumneavoastră."
 
-#: pretix/base/services/orders.py:170
+#: pretix/base/services/orders.py:171
 msgid ""
 "The voucher code used for one of the items in your cart is expired. We "
 "removed this item from your cart."
@@ -8969,7 +8966,7 @@ msgstr ""
 "Codul voucher folosit pentru unul dintre articolele din coșul dvs. a "
 "expirat. Am eliminat acest articol din coșul dumneavoastră."
 
-#: pretix/base/services/orders.py:173
+#: pretix/base/services/orders.py:174
 msgid ""
 "The voucher code used for one of the items in your cart is not valid for "
 "this item. We removed this item from your cart."
@@ -8978,12 +8975,12 @@ msgstr ""
 "este valabil pentru acest articol. Am eliminat acest articol din coșul "
 "dumneavoastră."
 
-#: pretix/base/services/orders.py:175
+#: pretix/base/services/orders.py:176
 msgid "You need a valid voucher code to order one of the products."
 msgstr ""
 "Aveți nevoie de un cod voucher valabil pentru a comanda unul dintre produse."
 
-#: pretix/base/services/orders.py:177
+#: pretix/base/services/orders.py:178
 #, fuzzy
 #| msgid ""
 #| "The presale period for one of the events in your cart has not yet "
@@ -8996,7 +8993,7 @@ msgstr ""
 "început încă. Pozițiile afectate au fost eliminate din coșul dvs. de "
 "cumpărături."
 
-#: pretix/base/services/orders.py:184
+#: pretix/base/services/orders.py:185
 msgid ""
 "One of the seats in your order was invalid, we removed the position from "
 "your cart."
@@ -9004,7 +9001,7 @@ msgstr ""
 "Unul dintre locurile din comanda dvs. a fost invalid, am eliminat poziția "
 "din coșul dvs. de cumpărături."
 
-#: pretix/base/services/orders.py:185
+#: pretix/base/services/orders.py:186
 msgid ""
 "One of the seats in your order has been taken in the meantime, we removed "
 "the position from your cart."
@@ -9012,7 +9009,7 @@ msgstr ""
 "Unul dintre locurile din comanda dvs. a fost ocupat între timp, am eliminat "
 "poziția din coșul dvs. de cumpărături."
 
-#: pretix/base/services/orders.py:201
+#: pretix/base/services/orders.py:202
 #, fuzzy, python-format
 #| msgid ""
 #| "You cannot delete the product <strong>%(item)s</strong> because it "
@@ -9024,32 +9021,32 @@ msgstr ""
 "Nu puteți șterge produsul <strong>%(item)s</strong> deoarece acesta a fost "
 "deja comandat."
 
-#: pretix/base/services/orders.py:202
+#: pretix/base/services/orders.py:203
 #, fuzzy
 #| msgid "This gift card does not support this currency."
 msgid "Paid products not supported without a valid currency."
 msgstr "Acest card cadou nu acceptă această monedă."
 
-#: pretix/base/services/orders.py:218
+#: pretix/base/services/orders.py:219
 #, fuzzy
 #| msgid "The order has been canceled."
 msgid "The order was not canceled."
 msgstr "Comanda a fost anulată."
 
-#: pretix/base/services/orders.py:272 pretix/control/forms/orders.py:124
+#: pretix/base/services/orders.py:273 pretix/control/forms/orders.py:124
 msgid "The new expiry date needs to be in the future."
 msgstr "Noua dată de expirare trebuie să fie în viitor."
 
-#: pretix/base/services/orders.py:365 pretix/base/services/orders.py:451
+#: pretix/base/services/orders.py:367 pretix/base/services/orders.py:453
 msgid "This order is not pending approval."
 msgstr "Această comandă nu este în curs de aprobare."
 
-#: pretix/base/services/orders.py:509 pretix/presale/views/order.py:928
+#: pretix/base/services/orders.py:511 pretix/presale/views/order.py:928
 #: pretix/presale/views/order.py:982
 msgid "You cannot cancel this order."
 msgstr "Nu puteți anula această comandă."
 
-#: pretix/base/services/orders.py:521
+#: pretix/base/services/orders.py:523
 #, python-brace-format
 msgid ""
 "This order can not be canceled since the gift card {card} purchased in this "
@@ -9058,7 +9055,7 @@ msgstr ""
 "Această comandă nu poate fi anulată deoarece cardul cadou {card} "
 "achiziționat în această comandă a fost deja revendicat."
 
-#: pretix/base/services/orders.py:561 pretix/control/forms/orders.py:205
+#: pretix/base/services/orders.py:563 pretix/control/forms/orders.py:205
 #, fuzzy
 #| msgid ""
 #| "The cancellation fee cannot be higher than the payment credit of this "
@@ -9069,13 +9066,13 @@ msgstr ""
 "Taxa de anulare nu poate fi mai mare decât creditul de plată al acestei "
 "comenzi."
 
-#: pretix/base/services/orders.py:955
+#: pretix/base/services/orders.py:957
 #, fuzzy
 #| msgid "This payment method does not support automatic refunds."
 msgid "The selected payment methods do not cover the total balance."
 msgstr "Această metodă de plată nu acceptă rambursări automate."
 
-#: pretix/base/services/orders.py:1023
+#: pretix/base/services/orders.py:1025
 msgid ""
 "While trying to place your order, we noticed that the order total has "
 "changed. Either one of the prices changed just now, or a gift card you used "
@@ -9086,11 +9083,11 @@ msgstr ""
 "cadou pe care l-ați folosit a fost utilizat între timp. Vă rugăm să "
 "verificați prețurile de mai jos și să încercați din nou."
 
-#: pretix/base/services/orders.py:1518
+#: pretix/base/services/orders.py:1520
 msgid "You need to select a variation of the product."
 msgstr "Trebuie să selectați o variantă a produsului."
 
-#: pretix/base/services/orders.py:1519
+#: pretix/base/services/orders.py:1521
 #, python-brace-format
 msgid ""
 "The quota {name} does not have enough capacity left to perform the operation."
@@ -9098,15 +9095,15 @@ msgstr ""
 "Cota {name} nu mai are suficientă disponibilitate pentru a efectua "
 "operațiunea."
 
-#: pretix/base/services/orders.py:1520
+#: pretix/base/services/orders.py:1522
 msgid "There is no quota defined that allows this operation."
 msgstr "Nu există o cotă definită care să permită această operațiune."
 
-#: pretix/base/services/orders.py:1521
+#: pretix/base/services/orders.py:1523
 msgid "The selected product is not active or has no price set."
 msgstr "Produsul selectat nu este activ sau nu are un preț stabilit."
 
-#: pretix/base/services/orders.py:1522
+#: pretix/base/services/orders.py:1524
 msgid ""
 "This operation would leave the order empty. Please cancel the order itself "
 "instead."
@@ -9114,7 +9111,7 @@ msgstr ""
 "Această operațiune ar lăsa comanda goală. Vă rugăm să anulați în schimb "
 "comanda însăși."
 
-#: pretix/base/services/orders.py:1524
+#: pretix/base/services/orders.py:1526
 msgid ""
 "This operation would make the order free and therefore immediately paid, "
 "however no quota is available."
@@ -9122,7 +9119,7 @@ msgstr ""
 "Această operațiune ar face comanda să fie gratuită și, prin urmare, să fie "
 "plătită imediat, însă nu este disponibilă nicio cotă."
 
-#: pretix/base/services/orders.py:1527
+#: pretix/base/services/orders.py:1529
 msgid ""
 "This is an add-on product, please select the base position it should be "
 "added to."
@@ -9130,7 +9127,7 @@ msgstr ""
 "Acesta este un produs adițional, vă rugăm să selectați poziția de bază la "
 "care trebuie adăugat."
 
-#: pretix/base/services/orders.py:1528
+#: pretix/base/services/orders.py:1530
 msgid ""
 "The selected base position does not allow you to add this product as an add-"
 "on."
@@ -9138,11 +9135,11 @@ msgstr ""
 "Poziția de bază selectată nu vă permite să adăugați acest produs ca "
 "supliment."
 
-#: pretix/base/services/orders.py:1529
+#: pretix/base/services/orders.py:1531
 msgid "You need to choose a subevent for the new position."
 msgstr "Trebuie să alegeți un subeveniment pentru noua poziție."
 
-#: pretix/base/services/orders.py:1532
+#: pretix/base/services/orders.py:1534
 #, python-brace-format
 msgid ""
 "You selected seat \"{seat}\" for a date that does not match the selected "
@@ -9151,19 +9148,19 @@ msgstr ""
 "Ați selectat locul \"{seat}\" pentru o dată care nu se potrivește cu data "
 "biletului selectat. Vă rugăm să alegeți din nou un loc."
 
-#: pretix/base/services/orders.py:1534
+#: pretix/base/services/orders.py:1536
 msgid "The selected product requires you to select a seat."
 msgstr "Pentru produsul selectat trebuie să selectați un loc."
 
-#: pretix/base/services/orders.py:1535
+#: pretix/base/services/orders.py:1537
 msgid "The selected product does not allow to select a seat."
 msgstr "Produsul selectat nu permite selectarea unui loc."
 
-#: pretix/base/services/orders.py:1536
+#: pretix/base/services/orders.py:1538
 msgid "The selected country is blocked by your tax rule."
 msgstr "Țara selectată este blocată de regula dvs. fiscală."
 
-#: pretix/base/services/orders.py:1537
+#: pretix/base/services/orders.py:1539
 msgid ""
 "You cannot change the price of a position that has been used to issue a gift "
 "card."
@@ -9171,7 +9168,7 @@ msgstr ""
 "Nu puteți modifica prețul unei poziții care a fost utilizată pentru a emite "
 "un card cadou."
 
-#: pretix/base/services/orders.py:2341 pretix/base/services/orders.py:2357
+#: pretix/base/services/orders.py:2343 pretix/base/services/orders.py:2359
 #, python-brace-format
 msgid ""
 "A position can not be canceled since the gift card {card} purchased in this "
@@ -9180,7 +9177,7 @@ msgstr ""
 "O poziție nu poate fi anulată deoarece cardul cadou {card} achiziționat în "
 "această comandă a fost deja revendicat."
 
-#: pretix/base/services/orders.py:3010
+#: pretix/base/services/orders.py:3012
 msgid ""
 "There was an error while trying to send the money back to you. Please "
 "contact the event organizer for further information."
@@ -11248,12 +11245,12 @@ msgstr "Atașament pentru comenzile noi"
 #, python-brace-format
 msgid ""
 "This file will be attached to the first email that we send for every new "
-"order. Therefore it will be combined with the \"Placed order\", \"Free "
-"order\", or \"Received order\" texts from above. It will be sent to both "
-"order contacts and attendees. You can use this e.g. to send your terms of "
-"service. Do not use it to send non-public information as this file might be "
-"sent before payment is confirmed or the order is approved. To avoid this "
-"vital email going to spam, you can only upload PDF files of up to {size} MB."
+"order. Therefore it will be combined with the \"Placed order\", \"Free order"
+"\", or \"Received order\" texts from above. It will be sent to both order "
+"contacts and attendees. You can use this e.g. to send your terms of service. "
+"Do not use it to send non-public information as this file might be sent "
+"before payment is confirmed or the order is approved. To avoid this vital "
+"email going to spam, you can only upload PDF files of up to {size} MB."
 msgstr ""
 "Acest fișier va fi atașat la primul e-mail pe care îl trimitem pentru "
 "fiecare comandă nouă. Prin urmare, acesta va fi combinat cu textele "
@@ -13428,8 +13425,8 @@ msgstr "Traducere neoficială"
 msgid ""
 "These translations are not maintained by the pretix team. We cannot vouch "
 "for their correctness and new or recently changed features might not be "
-"translated and will show in English instead. You can <a "
-"href=\"{translate_url}\" target=\"_blank\">help translating</a>."
+"translated and will show in English instead. You can <a href="
+"\"{translate_url}\" target=\"_blank\">help translating</a>."
 msgstr ""
 "Această traducere nu este întreținută de echipa pretix. Nu putem garanta "
 "pentru corectitudinea acesteia și este posibil ca funcțiile noi sau recent "
@@ -13488,8 +13485,8 @@ msgid "Support for check-in questions"
 msgstr "Regulă personalizată de check-in"
 
 #: pretix/control/forms/checkin.py:197 pretix/control/forms/checkin.py:213
-#: pretix/control/forms/filter.py:2399 pretix/control/forms/filter.py:2441
-#: pretix/control/forms/filter.py:2607
+#: pretix/control/forms/filter.py:2387 pretix/control/forms/filter.py:2429
+#: pretix/control/forms/filter.py:2594
 msgid "All gates"
 msgstr "Toate porțile de intrare"
 
@@ -14160,24 +14157,24 @@ msgid "Please enter less than 25 recipients."
 msgstr "Vă rugăm să introduceți rezultatul corect."
 
 #: pretix/control/forms/filter.py:196 pretix/control/forms/filter.py:198
-#: pretix/control/forms/filter.py:980 pretix/control/forms/filter.py:982
+#: pretix/control/forms/filter.py:979 pretix/control/forms/filter.py:981
 msgid "Search for…"
 msgstr "Căutați…"
 
-#: pretix/control/forms/filter.py:213 pretix/control/navigation.py:205
+#: pretix/control/forms/filter.py:212 pretix/control/navigation.py:205
 #: pretix/control/templates/pretixcontrol/items/question.html:25
 msgid "All orders"
 msgstr "Toate comenzile"
 
-#: pretix/control/forms/filter.py:214
+#: pretix/control/forms/filter.py:213
 msgid "Valid orders"
 msgstr "Comenzi valide"
 
-#: pretix/control/forms/filter.py:215
+#: pretix/control/forms/filter.py:214
 msgid "Paid (or canceled with paid fee)"
 msgstr "Plătită (sau anulată cu taxă plătită)"
 
-#: pretix/control/forms/filter.py:216
+#: pretix/control/forms/filter.py:215
 #: pretix/control/templates/pretixcontrol/items/question.html:27
 #, fuzzy
 #| msgctxt "checkoutflow"
@@ -14185,7 +14182,7 @@ msgstr "Plătită (sau anulată cu taxă plătită)"
 msgid "Paid or confirmed"
 msgstr "Comandă confirmată"
 
-#: pretix/control/forms/filter.py:217
+#: pretix/control/forms/filter.py:216
 #: pretix/control/templates/pretixcontrol/items/question.html:28
 #: pretix/control/templates/pretixcontrol/orders/fragment_order_status.html:19
 #: pretix/control/templates/pretixcontrol/orders/overview.html:87
@@ -14193,76 +14190,76 @@ msgstr "Comandă confirmată"
 msgid "Pending"
 msgstr "În așteptare"
 
-#: pretix/control/forms/filter.py:218
+#: pretix/control/forms/filter.py:217
 #: pretix/control/templates/pretixcontrol/items/question.html:29
 msgid "Pending or paid"
 msgstr "În așteptare sau plătită"
 
-#: pretix/control/forms/filter.py:220
+#: pretix/control/forms/filter.py:219
 msgid "Cancellations"
 msgstr "Anulări"
 
-#: pretix/control/forms/filter.py:221
+#: pretix/control/forms/filter.py:220
 msgid "Canceled (fully)"
 msgstr "Anulat (integral)"
 
-#: pretix/control/forms/filter.py:222
+#: pretix/control/forms/filter.py:221
 msgid "Canceled (fully or with paid fee)"
 msgstr "Anulat (integral sau cu taxă plătită)"
 
-#: pretix/control/forms/filter.py:223
+#: pretix/control/forms/filter.py:222
 msgid "Cancellation requested"
 msgstr "Anulare solicitată"
 
-#: pretix/control/forms/filter.py:224
+#: pretix/control/forms/filter.py:223
 msgid "Fully canceled but invoice not canceled"
 msgstr "Anulată în totalitate, dar factura nu a fost anulată"
 
-#: pretix/control/forms/filter.py:226
+#: pretix/control/forms/filter.py:225
 msgid "Payment process"
 msgstr "Procesul de plată"
 
-#: pretix/control/forms/filter.py:228
+#: pretix/control/forms/filter.py:227
 #: pretix/control/templates/pretixcontrol/items/question.html:32
 msgid "Pending or expired"
 msgstr "În așteptare sau expirată"
 
-#: pretix/control/forms/filter.py:229
+#: pretix/control/forms/filter.py:228
 #: pretix/control/templates/pretixcontrol/items/question.html:30
 msgid "Pending (overdue)"
 msgstr "În așteptare (în întârziere)"
 
-#: pretix/control/forms/filter.py:230
+#: pretix/control/forms/filter.py:229
 msgid "Overpaid"
 msgstr "Plătit în plus"
 
-#: pretix/control/forms/filter.py:231
+#: pretix/control/forms/filter.py:230
 msgid "Partially paid"
 msgstr "Parțial plătit"
 
-#: pretix/control/forms/filter.py:232
+#: pretix/control/forms/filter.py:231
 msgid "Underpaid (but confirmed)"
 msgstr "Plătit mai puțin (dar confirmat)"
 
-#: pretix/control/forms/filter.py:233
+#: pretix/control/forms/filter.py:232
 msgid "Pending (but fully paid)"
 msgstr "În așteptare (dar achitat integral)"
 
-#: pretix/control/forms/filter.py:234
+#: pretix/control/forms/filter.py:233
 #, fuzzy
 #| msgid "Pending (but fully paid)"
 msgid "Pending (but no current payment)"
 msgstr "În așteptare (dar achitat integral)"
 
-#: pretix/control/forms/filter.py:236
+#: pretix/control/forms/filter.py:235
 msgid "Approval process"
 msgstr "Procesul de aprobare"
 
-#: pretix/control/forms/filter.py:237
+#: pretix/control/forms/filter.py:236
 msgid "Approved, payment pending"
 msgstr "Aprobat, în curs de plată"
 
-#: pretix/control/forms/filter.py:238
+#: pretix/control/forms/filter.py:237
 #: pretix/control/templates/pretixcontrol/orders/fragment_order_status.html:8
 #: pretix/control/templates/pretixcontrol/orders/overview.html:79
 #: pretix/plugins/reports/exporters.py:380
@@ -14270,162 +14267,162 @@ msgstr "Aprobat, în curs de plată"
 msgid "Approval pending"
 msgstr "În curs de aprobare"
 
-#: pretix/control/forms/filter.py:241
+#: pretix/control/forms/filter.py:240
 msgid "Follow-up configured"
 msgstr "Urmărire configurată"
 
-#: pretix/control/forms/filter.py:242
+#: pretix/control/forms/filter.py:241
 msgid "Follow-up due"
 msgstr "Urmărire datorie"
 
-#: pretix/control/forms/filter.py:461 pretix/control/forms/filter.py:1900
-#: pretix/control/forms/filter.py:2157 pretix/control/forms/filter.py:2461
-#: pretix/control/forms/filter.py:2480 pretix/control/forms/vouchers.py:152
+#: pretix/control/forms/filter.py:460 pretix/control/forms/filter.py:1890
+#: pretix/control/forms/filter.py:2145 pretix/control/forms/filter.py:2449
+#: pretix/control/forms/filter.py:2468 pretix/control/forms/vouchers.py:152
 #: pretix/control/templates/pretixcontrol/items/question.html:38
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:119
 #: pretix/plugins/sendmail/models.py:251
 msgid "All products"
 msgstr "Toate produsele"
 
-#: pretix/control/forms/filter.py:465 pretix/control/forms/filter.py:2161
-#: pretix/control/forms/filter.py:2465 pretix/control/forms/vouchers.py:140
+#: pretix/control/forms/filter.py:464 pretix/control/forms/filter.py:2149
+#: pretix/control/forms/filter.py:2453 pretix/control/forms/vouchers.py:140
 #: pretix/control/views/typeahead.py:666 pretix/control/views/typeahead.py:783
 #, python-brace-format
 msgid "{product} – Any variation"
 msgstr "{product} - Orice variație"
 
-#: pretix/control/forms/filter.py:529 pretix/control/forms/orders.py:841
+#: pretix/control/forms/filter.py:528 pretix/control/forms/orders.py:841
 msgctxt "subevent"
 msgid "All dates starting at or after"
 msgstr "Toate datele care încep la sau după"
 
-#: pretix/control/forms/filter.py:535 pretix/control/forms/orders.py:848
+#: pretix/control/forms/filter.py:534 pretix/control/forms/orders.py:848
 msgctxt "subevent"
 msgid "All dates starting before"
 msgstr "Toate datele care încep înainte de"
 
-#: pretix/control/forms/filter.py:541
+#: pretix/control/forms/filter.py:540
 msgid "Order placed at or after"
 msgstr "Comandă plasată la sau după"
 
-#: pretix/control/forms/filter.py:547
+#: pretix/control/forms/filter.py:546
 msgid "Order placed before"
 msgstr "Comandă plasată înainte de"
 
-#: pretix/control/forms/filter.py:576
+#: pretix/control/forms/filter.py:575
 msgid "Minimal sum of payments and refunds"
 msgstr "Suma minimă a plăților și rambursărilor"
 
-#: pretix/control/forms/filter.py:581
+#: pretix/control/forms/filter.py:580
 msgid "Maximal sum of payments and refunds"
 msgstr "Suma maximă a plăților și restituirilor"
 
-#: pretix/control/forms/filter.py:592
+#: pretix/control/forms/filter.py:591
 msgid "At least one ticket with check-in"
 msgstr ""
 
-#: pretix/control/forms/filter.py:596
+#: pretix/control/forms/filter.py:595
 #, fuzzy
 #| msgid "Delete quota"
 msgid "Affected quota"
 msgstr "Ștergeți cota"
 
-#: pretix/control/forms/filter.py:633 pretix/control/forms/filter.py:638
-#: pretix/control/forms/filter.py:664 pretix/control/forms/filter.py:669
-#: pretix/control/forms/filter.py:699 pretix/control/forms/filter.py:731
-#: pretix/control/forms/filter.py:737 pretix/control/forms/filter.py:747
-#: pretix/control/forms/filter.py:754
+#: pretix/control/forms/filter.py:632 pretix/control/forms/filter.py:637
+#: pretix/control/forms/filter.py:663 pretix/control/forms/filter.py:668
+#: pretix/control/forms/filter.py:698 pretix/control/forms/filter.py:730
+#: pretix/control/forms/filter.py:736 pretix/control/forms/filter.py:746
+#: pretix/control/forms/filter.py:753
 msgid "Exact matches only"
 msgstr "Numai potriviri exacte"
 
-#: pretix/control/forms/filter.py:884 pretix/control/forms/filter.py:889
-#: pretix/control/forms/filter.py:1003 pretix/control/forms/filter.py:1008
-#: pretix/control/forms/filter.py:1685 pretix/control/forms/filter.py:1690
+#: pretix/control/forms/filter.py:883 pretix/control/forms/filter.py:888
+#: pretix/control/forms/filter.py:1001 pretix/control/forms/filter.py:1006
+#: pretix/control/forms/filter.py:1677 pretix/control/forms/filter.py:1682
 msgid "All organizers"
 msgstr "Toți organizatorii"
 
-#: pretix/control/forms/filter.py:995 pretix/control/forms/filter.py:1669
+#: pretix/control/forms/filter.py:993 pretix/control/forms/filter.py:1661
 msgid "All events"
 msgstr "Toate evenimentele"
 
-#: pretix/control/forms/filter.py:1015
+#: pretix/control/forms/filter.py:1013
 msgid "All payments"
 msgstr "Toate plățile"
 
-#: pretix/control/forms/filter.py:1025
+#: pretix/control/forms/filter.py:1023
 msgid "Payment created from"
 msgstr "Plata creată din"
 
-#: pretix/control/forms/filter.py:1030
+#: pretix/control/forms/filter.py:1028
 msgid "Payment created until"
 msgstr "Plata creată până la"
 
-#: pretix/control/forms/filter.py:1035
+#: pretix/control/forms/filter.py:1033
 msgid "Paid from"
 msgstr "Plătită din"
 
-#: pretix/control/forms/filter.py:1040
+#: pretix/control/forms/filter.py:1038
 msgid "Paid until"
 msgstr "Plătită până la"
 
-#: pretix/control/forms/filter.py:1196 pretix/control/forms/filter.py:1671
+#: pretix/control/forms/filter.py:1194 pretix/control/forms/filter.py:1663
 msgid "Shop live and presale running"
 msgstr "Magazin live și pre-sale în funcțiune"
 
-#: pretix/control/forms/filter.py:1197 pretix/control/forms/filter.py:2013
+#: pretix/control/forms/filter.py:1195 pretix/control/forms/filter.py:2003
 msgid "Inactive"
 msgstr "Inactiv"
 
-#: pretix/control/forms/filter.py:1198 pretix/control/forms/filter.py:1673
+#: pretix/control/forms/filter.py:1196 pretix/control/forms/filter.py:1665
 #: pretix/control/templates/pretixcontrol/events/index.html:150
 #: pretix/control/templates/pretixcontrol/organizers/detail.html:114
 #: pretix/control/templates/pretixcontrol/subevents/index.html:170
 msgid "Presale not started"
 msgstr "Pre-sale nu a început"
 
-#: pretix/control/forms/filter.py:1199 pretix/control/forms/filter.py:1674
+#: pretix/control/forms/filter.py:1197 pretix/control/forms/filter.py:1666
 #: pretix/control/templates/pretixcontrol/events/index.html:148
 #: pretix/control/templates/pretixcontrol/organizers/detail.html:112
 #: pretix/control/templates/pretixcontrol/subevents/index.html:168
 msgid "Presale over"
 msgstr "Pre-sale încheiat"
 
-#: pretix/control/forms/filter.py:1204 pretix/control/forms/filter.py:1207
-#: pretix/control/forms/filter.py:1703 pretix/control/forms/filter.py:1706
-#: pretix/control/forms/filter.py:2339
+#: pretix/control/forms/filter.py:1202 pretix/control/forms/filter.py:1205
+#: pretix/control/forms/filter.py:1694 pretix/control/forms/filter.py:1697
+#: pretix/control/forms/filter.py:2327
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/import_form.html:84
 msgid "Date from"
 msgstr "De la data"
 
-#: pretix/control/forms/filter.py:1211 pretix/control/forms/filter.py:1214
-#: pretix/control/forms/filter.py:1710 pretix/control/forms/filter.py:1713
-#: pretix/control/forms/filter.py:2344
+#: pretix/control/forms/filter.py:1209 pretix/control/forms/filter.py:1212
+#: pretix/control/forms/filter.py:1701 pretix/control/forms/filter.py:1704
+#: pretix/control/forms/filter.py:2332
 msgid "Date until"
 msgstr "Până la data"
 
-#: pretix/control/forms/filter.py:1218
+#: pretix/control/forms/filter.py:1216
 msgid "Start time from"
 msgstr "Ora de începere de la"
 
-#: pretix/control/forms/filter.py:1223
+#: pretix/control/forms/filter.py:1221
 msgid "Start time until"
 msgstr "Ora de începere până la"
 
-#: pretix/control/forms/filter.py:1228 pretix/control/forms/rrule.py:111
+#: pretix/control/forms/filter.py:1226 pretix/control/forms/rrule.py:111
 #: pretix/control/forms/rrule.py:150
 msgid "Weekday"
 msgstr "Ziua saptamanii"
 
-#: pretix/control/forms/filter.py:1433 pretix/control/forms/filter.py:1435
-#: pretix/control/forms/filter.py:1485 pretix/control/forms/filter.py:1487
-#: pretix/control/forms/filter.py:1558 pretix/control/forms/filter.py:1560
-#: pretix/control/forms/filter.py:1613 pretix/control/forms/filter.py:1615
-#: pretix/control/forms/filter.py:2027 pretix/control/forms/filter.py:2029
-#: pretix/control/forms/filter.py:2597 pretix/control/forms/filter.py:2599
+#: pretix/control/forms/filter.py:1429 pretix/control/forms/filter.py:1431
+#: pretix/control/forms/filter.py:1480 pretix/control/forms/filter.py:1482
+#: pretix/control/forms/filter.py:1552 pretix/control/forms/filter.py:1554
+#: pretix/control/forms/filter.py:1606 pretix/control/forms/filter.py:1608
+#: pretix/control/forms/filter.py:2017 pretix/control/forms/filter.py:2019
+#: pretix/control/forms/filter.py:2585 pretix/control/forms/filter.py:2587
 msgid "Search query"
 msgstr "Caută sintaxa"
 
-#: pretix/control/forms/filter.py:1497 pretix/control/forms/filter.py:1570
+#: pretix/control/forms/filter.py:1491 pretix/control/forms/filter.py:1563
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:46
 #: pretix/control/templates/pretixcontrol/organizers/giftcard_acceptance_list.html:47
 #: pretix/control/templates/pretixcontrol/organizers/giftcard_acceptance_list.html:54
@@ -14435,12 +14432,20 @@ msgstr "Caută sintaxa"
 msgid "active"
 msgstr "activ"
 
-#: pretix/control/forms/filter.py:1499
+#: pretix/control/forms/filter.py:1492 pretix/control/forms/filter.py:1564
+#: pretix/control/templates/pretixcontrol/organizers/customer.html:42
+#: pretix/control/templates/pretixcontrol/organizers/giftcard_acceptance_list.html:56
+#: pretix/control/templates/pretixcontrol/organizers/giftcard_acceptance_list.html:135
+#: pretix/control/templates/pretixcontrol/organizers/reusable_medium.html:35
+msgid "disabled"
+msgstr "dezactivat"
+
+#: pretix/control/forms/filter.py:1493
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:44
 msgid "not yet activated"
 msgstr "nu a fost încă activat"
 
-#: pretix/control/forms/filter.py:1503
+#: pretix/control/forms/filter.py:1497
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:110
 #: pretix/presale/templates/pretixpresale/organizers/customer_memberships.html:6
 #: pretix/presale/templates/pretixpresale/organizers/customer_memberships.html:12
@@ -14448,204 +14453,204 @@ msgstr "nu a fost încă activat"
 msgid "Memberships"
 msgstr "Abonamente membri"
 
-#: pretix/control/forms/filter.py:1507
+#: pretix/control/forms/filter.py:1501
 msgid "Has no memberships"
 msgstr "Nu are niciun abonament"
 
-#: pretix/control/forms/filter.py:1508
+#: pretix/control/forms/filter.py:1502
 msgid "Has any membership"
 msgstr "Are un abonament"
 
-#: pretix/control/forms/filter.py:1509
+#: pretix/control/forms/filter.py:1503
 msgid "Has valid membership"
 msgstr "Are un abonament valid"
 
-#: pretix/control/forms/filter.py:1670
+#: pretix/control/forms/filter.py:1662
 msgid "Shop live"
 msgstr "Magazin live"
 
-#: pretix/control/forms/filter.py:1672
+#: pretix/control/forms/filter.py:1664
 msgid "Shop not live"
 msgstr "Magazinul nu e live"
 
-#: pretix/control/forms/filter.py:1675
+#: pretix/control/forms/filter.py:1667
 msgid "Single event running or in the future"
 msgstr "Eveniment unic în desfășurare sau în viitor"
 
-#: pretix/control/forms/filter.py:1676
+#: pretix/control/forms/filter.py:1668
 msgid "Single event in the past"
 msgstr "Eveniment unic în trecut"
 
-#: pretix/control/forms/filter.py:1878 pretix/control/forms/filter.py:1880
+#: pretix/control/forms/filter.py:1869 pretix/control/forms/filter.py:1871
 msgid "Search attendee…"
 msgstr "Căutați participanți…"
 
-#: pretix/control/forms/filter.py:1886
+#: pretix/control/forms/filter.py:1876
 #: pretix/plugins/checkinlists/exporters.py:105
 msgid "Check-in status"
 msgstr "Status check-in"
 
-#: pretix/control/forms/filter.py:1888
+#: pretix/control/forms/filter.py:1878
 #: pretix/plugins/checkinlists/exporters.py:107
 msgid "All attendees"
 msgstr "Toți participanții"
 
-#: pretix/control/forms/filter.py:1889
+#: pretix/control/forms/filter.py:1879
 #: pretix/control/templates/pretixcontrol/checkin/index.html:183
 #: pretix/control/templates/pretixcontrol/checkin/lists.html:96
 #: pretix/plugins/checkinlists/exporters.py:108
-#: pretix/plugins/checkinlists/exporters.py:497
+#: pretix/plugins/checkinlists/exporters.py:499
 msgid "Checked in"
 msgstr "Cu check-in"
 
-#: pretix/control/forms/filter.py:1890
+#: pretix/control/forms/filter.py:1880
 #: pretix/plugins/checkinlists/exporters.py:109
 msgctxt "checkin state"
 msgid "Present"
 msgstr "Prezent"
 
-#: pretix/control/forms/filter.py:1891
+#: pretix/control/forms/filter.py:1881
 #: pretix/plugins/checkinlists/exporters.py:110
 msgctxt "checkin state"
 msgid "Checked in but left"
 msgstr "Cu check-in, dar a plecat"
 
-#: pretix/control/forms/filter.py:1892
+#: pretix/control/forms/filter.py:1882
 #: pretix/control/templates/pretixcontrol/checkin/index.html:178
 #: pretix/plugins/checkinlists/exporters.py:111
 msgid "Not checked in"
 msgstr "Fără check-in"
 
-#: pretix/control/forms/filter.py:1911
+#: pretix/control/forms/filter.py:1901
 msgctxt "subevent"
 msgid "Date start from"
 msgstr "Data de începere de la"
 
-#: pretix/control/forms/filter.py:1917
+#: pretix/control/forms/filter.py:1907
 msgctxt "subevent"
 msgid "Date start until"
 msgstr "Data de începere până la"
 
-#: pretix/control/forms/filter.py:2018 pretix/control/forms/filter.py:2021
+#: pretix/control/forms/filter.py:2008 pretix/control/forms/filter.py:2011
 #: pretix/control/templates/pretixcontrol/users/index.html:52
 msgid "Administrator"
 msgstr "Administrator"
 
-#: pretix/control/forms/filter.py:2022
+#: pretix/control/forms/filter.py:2012
 msgid "No administrator"
 msgstr "Niciun administrator"
 
-#: pretix/control/forms/filter.py:2093
+#: pretix/control/forms/filter.py:2082
 msgid "Valid"
 msgstr "Valid"
 
-#: pretix/control/forms/filter.py:2094
+#: pretix/control/forms/filter.py:2083
 msgid "Unredeemed"
 msgstr "Nerevendicat"
 
-#: pretix/control/forms/filter.py:2095
+#: pretix/control/forms/filter.py:2084
 msgid "Redeemed at least once"
 msgstr "Revendicat cel puțin o dată"
 
-#: pretix/control/forms/filter.py:2096
+#: pretix/control/forms/filter.py:2085
 msgid "Fully redeemed"
 msgstr "Revendicat în totalitate"
 
-#: pretix/control/forms/filter.py:2098
+#: pretix/control/forms/filter.py:2087
 msgid "Redeemed and checked in with ticket"
 msgstr "Revendicat și înregistrat cu bilet"
 
-#: pretix/control/forms/filter.py:2103
+#: pretix/control/forms/filter.py:2092
 msgid "Quota handling"
 msgstr "Gestionarea cotelor"
 
-#: pretix/control/forms/filter.py:2107
+#: pretix/control/forms/filter.py:2096
 msgid "Allow to ignore quota"
 msgstr "Permiteți să ignorați cota"
 
-#: pretix/control/forms/filter.py:2112 pretix/control/forms/filter.py:2114
+#: pretix/control/forms/filter.py:2101 pretix/control/forms/filter.py:2103
 msgid "Filter by tag"
 msgstr "Filtrare după etichete"
 
-#: pretix/control/forms/filter.py:2119 pretix/control/forms/filter.py:2121
+#: pretix/control/forms/filter.py:2108 pretix/control/forms/filter.py:2110
 msgid "Search voucher"
 msgstr "Căutare voucher"
 
-#: pretix/control/forms/filter.py:2167 pretix/control/forms/vouchers.py:131
+#: pretix/control/forms/filter.py:2155 pretix/control/forms/vouchers.py:131
 #: pretix/control/views/typeahead.py:791 pretix/control/views/typeahead.py:795
 #: pretix/control/views/vouchers.py:132
 #, python-brace-format
 msgid "Any product in quota \"{quota}\""
 msgstr "Orice produs din cota \"{quota}\""
 
-#: pretix/control/forms/filter.py:2289
+#: pretix/control/forms/filter.py:2277
 msgid "Refund status"
 msgstr "Status rambursare"
 
-#: pretix/control/forms/filter.py:2291
+#: pretix/control/forms/filter.py:2279
 msgid "All open refunds"
 msgstr "Toate rambursările deschise"
 
-#: pretix/control/forms/filter.py:2292
+#: pretix/control/forms/filter.py:2280
 msgid "All refunds"
 msgstr "Toate rambursările"
 
-#: pretix/control/forms/filter.py:2330 pretix/plugins/reports/exporters.py:688
+#: pretix/control/forms/filter.py:2318 pretix/plugins/reports/exporters.py:688
 msgid "Date filter"
 msgstr "Filtrează după dată"
 
-#: pretix/control/forms/filter.py:2332 pretix/plugins/reports/exporters.py:690
+#: pretix/control/forms/filter.py:2320 pretix/plugins/reports/exporters.py:690
 msgid "Filter by…"
 msgstr "Filtrați după…"
 
-#: pretix/control/forms/filter.py:2334 pretix/plugins/reports/exporters.py:692
+#: pretix/control/forms/filter.py:2322 pretix/plugins/reports/exporters.py:692
 msgid "Date of last successful payment"
 msgstr "Data ultimei plăți efectuate cu succes"
 
-#: pretix/control/forms/filter.py:2374
+#: pretix/control/forms/filter.py:2362
 msgid "All check-ins"
 msgstr "Toate check-in-urile"
 
-#: pretix/control/forms/filter.py:2375
+#: pretix/control/forms/filter.py:2363
 msgid "Successful check-ins"
 msgstr "Check-in-uri reușite"
 
-#: pretix/control/forms/filter.py:2376
+#: pretix/control/forms/filter.py:2364
 msgid "Unsuccessful check-ins"
 msgstr "Check-in-uri nereușite"
 
-#: pretix/control/forms/filter.py:2381
+#: pretix/control/forms/filter.py:2369
 #: pretix/control/templates/pretixcontrol/checkin/checkins.html:64
-#: pretix/plugins/checkinlists/exporters.py:753
+#: pretix/plugins/checkinlists/exporters.py:755
 msgid "Scan type"
 msgstr "Tip de scanare"
 
-#: pretix/control/forms/filter.py:2383
+#: pretix/control/forms/filter.py:2371
 msgid "All directions"
 msgstr "Toate direcțiile"
 
-#: pretix/control/forms/filter.py:2392 pretix/control/forms/filter.py:2432
+#: pretix/control/forms/filter.py:2380 pretix/control/forms/filter.py:2420
 #: pretix/control/templates/pretixcontrol/checkin/checkins.html:67
-#: pretix/plugins/checkinlists/exporters.py:759
+#: pretix/plugins/checkinlists/exporters.py:761
 msgid "Device"
 msgstr "Dispozitiv"
 
-#: pretix/control/forms/filter.py:2393 pretix/control/forms/filter.py:2428
-#: pretix/control/forms/filter.py:2620
+#: pretix/control/forms/filter.py:2381 pretix/control/forms/filter.py:2416
+#: pretix/control/forms/filter.py:2607
 msgid "All devices"
 msgstr "Toate dispozitivele"
 
-#: pretix/control/forms/filter.py:2407
+#: pretix/control/forms/filter.py:2395
 msgctxt "filter"
 msgid "Start date"
 msgstr "Dată început"
 
-#: pretix/control/forms/filter.py:2413
+#: pretix/control/forms/filter.py:2401
 msgctxt "filter"
 msgid "End date"
 msgstr "Dată sfârșit"
 
-#: pretix/control/forms/filter.py:2455 pretix/control/forms/filter.py:2459
+#: pretix/control/forms/filter.py:2443 pretix/control/forms/filter.py:2447
 #: pretix/control/templates/pretixcontrol/checkin/checkins.html:64
 #: pretix/control/templates/pretixcontrol/checkin/list_edit.html:10
 #: pretix/control/templates/pretixcontrol/checkin/list_edit.html:25
@@ -14655,26 +14660,26 @@ msgstr "Dată sfârșit"
 #: pretix/plugins/autocheckin/templates/pretixplugins/autocheckin/index.html:29
 #: pretix/plugins/checkinlists/exporters.py:80
 #: pretix/plugins/checkinlists/exporters.py:153
-#: pretix/plugins/checkinlists/exporters.py:472
-#: pretix/plugins/checkinlists/exporters.py:752
-#: pretix/plugins/checkinlists/exporters.py:834
+#: pretix/plugins/checkinlists/exporters.py:474
+#: pretix/plugins/checkinlists/exporters.py:754
+#: pretix/plugins/checkinlists/exporters.py:836
 msgid "Check-in list"
 msgstr "Lista de check-in"
 
-#: pretix/control/forms/filter.py:2611
+#: pretix/control/forms/filter.py:2598
 #: pretix/control/templates/pretixcontrol/organizers/devices.html:82
 msgid "Software"
 msgstr "Software"
 
-#: pretix/control/forms/filter.py:2618
+#: pretix/control/forms/filter.py:2605
 msgid "Device status"
 msgstr "Status dispozitiv"
 
-#: pretix/control/forms/filter.py:2621
+#: pretix/control/forms/filter.py:2608
 msgid "Active devices"
 msgstr "Dispozitive active"
 
-#: pretix/control/forms/filter.py:2622
+#: pretix/control/forms/filter.py:2609
 msgid "Revoked devices"
 msgstr "Dispozitive revocate"
 
@@ -15916,6 +15921,13 @@ msgid ""
 "endpoint. Enter as: {example}"
 msgstr ""
 
+#: pretix/control/forms/organizer.py:1070
+#, fuzzy, python-brace-format
+#| msgid "Email invoices"
+msgctxt "sso_oidc"
+msgid "{label} field"
+msgstr "Facturi prin e-mail"
+
 #: pretix/control/forms/organizer.py:1109
 #, fuzzy
 #| msgid "A new client secret has been generated and is now effective."
@@ -16398,8 +16410,8 @@ msgstr ""
 #: pretix/control/logdisplay.py:316
 #, fuzzy, python-brace-format
 #| msgid ""
-#| "Scan scan of revoked code \"{barcode}…\" at {datetime} for list \"{list}"
-#| "\", type \"{type}\", was uploaded."
+#| "Scan scan of revoked code \"{barcode}…\" at {datetime} for list "
+#| "\"{list}\", type \"{type}\", was uploaded."
 msgid ""
 "Scan of revoked code \"{barcode}…\" at {datetime} for list \"{list}\", type "
 "\"{type}\", was uploaded."
@@ -16413,8 +16425,8 @@ msgid ""
 "Scan of revoked code \"{barcode}\" for list \"{list}\", type \"{type}\", was "
 "uploaded."
 msgstr ""
-"Scanarea codului revocat \"{barcode}\" pentru lista \"{list}\", tip \"{type}"
-"\", a fost încărcată."
+"Scanarea codului revocat \"{barcode}\" pentru lista \"{list}\", tip "
+"\"{type}\", a fost încărcată."
 
 #: pretix/control/logdisplay.py:320
 #, python-brace-format
@@ -16431,8 +16443,8 @@ msgid ""
 "Denied scan of position #{posid} for list \"{list}\", type \"{type}\", error "
 "code \"{errorcode}\"."
 msgstr ""
-"Scanare refuzată a poziției #{posid} pentru lista \"{list}\", tip \"{type}"
-"\", cod de eroare \"{errorcode}\"."
+"Scanare refuzată a poziției #{posid} pentru lista \"{list}\", tip "
+"\"{type}\", cod de eroare \"{errorcode}\"."
 
 #: pretix/control/logdisplay.py:323 pretix/control/logdisplay.py:324
 #, python-brace-format
@@ -17663,8 +17675,8 @@ msgstr "Contul a fost modificat."
 #: pretix/control/logdisplay.py:897
 #, python-brace-format
 msgid ""
-"Position #{posid} has been checked in manually at {datetime} on list \"{list}"
-"\"."
+"Position #{posid} has been checked in manually at {datetime} on list "
+"\"{list}\"."
 msgstr ""
 "Poziția #{posid} a fost înregistrată ca check-in manual la {datetime} pe "
 "lista \"{list}\"."
@@ -18488,8 +18500,8 @@ msgid ""
 "Are you sure you want to permanently delete the check-ins of <strong>one "
 "ticket</strong>."
 msgid_plural ""
-"Are you sure you want to permanently delete the check-ins of "
-"<strong>%(count)s tickets</strong>?"
+"Are you sure you want to permanently delete the check-ins of <strong>"
+"%(count)s tickets</strong>?"
 msgstr[0] ""
 "Sunteți sigur că doriți să ștergeți lista de check-in <strong>%(name)s</"
 "strong>?"
@@ -18628,8 +18640,8 @@ msgstr "Șterge"
 #: pretix/control/templates/pretixcontrol/events/index.html:53
 #: pretix/control/templates/pretixcontrol/items/question.html:19
 #: pretix/control/templates/pretixcontrol/items/question.html:56
-#: pretix/control/templates/pretixcontrol/orders/index.html:57
-#: pretix/control/templates/pretixcontrol/orders/index.html:94
+#: pretix/control/templates/pretixcontrol/orders/index.html:56
+#: pretix/control/templates/pretixcontrol/orders/index.html:93
 #: pretix/control/templates/pretixcontrol/orders/overview.html:25
 #: pretix/control/templates/pretixcontrol/orders/overview.html:59
 #: pretix/control/templates/pretixcontrol/orders/refunds.html:12
@@ -18681,7 +18693,7 @@ msgstr "Ora scănarii"
 #: pretix/control/templates/pretixcontrol/checkin/checkins.html:65
 #: pretix/control/templates/pretixcontrol/checkin/simulator.html:49
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/transaction_list.html:14
-#: pretix/plugins/checkinlists/exporters.py:764
+#: pretix/plugins/checkinlists/exporters.py:766
 msgid "Result"
 msgstr "Rezultat"
 
@@ -18767,7 +18779,7 @@ msgid "No attendee record was found."
 msgstr "Nicio înregistrare găsită despre participant."
 
 #: pretix/control/templates/pretixcontrol/checkin/index.html:91
-#: pretix/control/templates/pretixcontrol/orders/index.html:128
+#: pretix/control/templates/pretixcontrol/orders/index.html:127
 #: pretix/control/templates/pretixcontrol/organizers/devices.html:68
 #: pretix/control/templates/pretixcontrol/subevents/index.html:89
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:108
@@ -18781,7 +18793,7 @@ msgid "Timestamp"
 msgstr "Timestamp"
 
 #: pretix/control/templates/pretixcontrol/checkin/index.html:125
-#: pretix/control/templates/pretixcontrol/orders/index.html:166
+#: pretix/control/templates/pretixcontrol/orders/index.html:165
 #: pretix/control/templates/pretixcontrol/organizers/devices.html:99
 #: pretix/control/templates/pretixcontrol/subevents/index.html:117
 #: pretix/control/templates/pretixcontrol/waitinglist/index.html:181
@@ -20283,8 +20295,8 @@ msgstr ""
 "pretix acceptă o <a href=\"https://pretix.eu/about/en/features/payment\" "
 "target=\"_blank\">gamă largă de procesatori de plăți</a>, permițându-vă să "
 "alegeți metodele de plată care se potrivesc cel mai bine nevoilor dvs. Iată "
-"doar două dintre ele ca exemple, puteți adăuga mai multe în partea "
-"\"Setări\" a evenimentului dvs."
+"doar două dintre ele ca exemple, puteți adăuga mai multe în partea \"Setări"
+"\" a evenimentului dvs."
 
 #: pretix/control/templates/pretixcontrol/event/quick_setup.html:173
 msgid ""
@@ -20589,14 +20601,14 @@ msgstr "Regula de taxare: %(name)s"
 #: pretix/control/templates/pretixcontrol/event/tax_edit.html:35
 #, python-format
 msgid ""
-"These settings are intended for advanced users. See the <a "
-"href=\"%(docs)s\">documentation</a> for more information. Note that we are "
-"not responsible for the correct handling of taxes in your ticket shop. If in "
-"doubt, please contact a lawyer or tax consultant."
+"These settings are intended for advanced users. See the <a href=\"%(docs)s"
+"\">documentation</a> for more information. Note that we are not responsible "
+"for the correct handling of taxes in your ticket shop. If in doubt, please "
+"contact a lawyer or tax consultant."
 msgstr ""
-"Aceste setări sunt destinate utilizatorilor avansați. Consultați <a "
-"href=\"%(docs)s\">documentația</a> pentru mai multe informații. Rețineți că "
-"nu suntem responsabili pentru gestionarea corectă a taxelor în magazinul "
+"Aceste setări sunt destinate utilizatorilor avansați. Consultați <a href="
+"\"%(docs)s\">documentația</a> pentru mai multe informații. Rețineți că nu "
+"suntem responsabili pentru gestionarea corectă a taxelor în magazinul "
 "dumneavoastră de bilete. Dacă aveți îndoieli, vă rugăm să contactați un "
 "avocat sau un consultant fiscal."
 
@@ -20753,8 +20765,8 @@ msgid ""
 "JavaScript, please &lt;a %(a_attr)s&gt;click here&lt;/a&gt;."
 msgstr ""
 "JavaScript este dezactivat în browserul dumneavoastră. Pentru a accesa "
-"magazinul nostru de bilete fără JavaScript, vă rugăm să &lt;a "
-"%(a_attr)s&gt;faceți click aici&lt;/a&gt;."
+"magazinul nostru de bilete fără JavaScript, vă rugăm să &lt;a %(a_attr)s&gt;"
+"faceți click aici&lt;/a&gt;."
 
 #: pretix/control/templates/pretixcontrol/event/widget.html:64
 #: pretix/plugins/returnurl/templates/returnurl/settings.html:15
@@ -21413,13 +21425,13 @@ msgstr ""
 
 #: pretix/control/templates/pretixcontrol/item/create.html:132
 msgid ""
-"Examples: Ticket category with variations for \"full price\" and "
-"\"reduced\", merchandise with variations for different sizes, workshop add-"
-"on with variations for simultaneous workshops."
+"Examples: Ticket category with variations for \"full price\" and \"reduced"
+"\", merchandise with variations for different sizes, workshop add-on with "
+"variations for simultaneous workshops."
 msgstr ""
-"Exemple: Categoria de bilete cu variații pentru \"preț întreg\" și "
-"\"redus\", produse cu variații pentru diferite mărimi, workshop add-on cu "
-"variații de workshop-uri simultane."
+"Exemple: Categoria de bilete cu variații pentru \"preț întreg\" și \"redus"
+"\", produse cu variații pentru diferite mărimi, workshop add-on cu variații "
+"de workshop-uri simultane."
 
 #: pretix/control/templates/pretixcontrol/item/create.html:165
 msgid "Quota settings"
@@ -21767,8 +21779,8 @@ msgstr "Conturi de client"
 msgid ""
 "With automatic discounts, you can automatically apply a discount to "
 "purchases from your customers based on certain conditions. For example, you "
-"can create group discounts like \"get 20%% off if you buy 3 or more "
-"tickets\" or \"buy 2 tickets, get 1 free\"."
+"can create group discounts like \"get 20%% off if you buy 3 or more tickets"
+"\" or \"buy 2 tickets, get 1 free\"."
 msgstr ""
 
 #: pretix/control/templates/pretixcontrol/items/discounts.html:15
@@ -21776,8 +21788,8 @@ msgid ""
 "Automatic discounts are available to all customers as long as they are "
 "active. If you want to offer special prices only to specific customers, you "
 "can use vouchers instead. If you want to offer discounts across multiple "
-"purchases (\"buy a package of 10 you can turn into individual tickets "
-"later\"), you can use customer accounts and memberships instead."
+"purchases (\"buy a package of 10 you can turn into individual tickets later"
+"\"), you can use customer accounts and memberships instead."
 msgstr ""
 
 #: pretix/control/templates/pretixcontrol/items/discounts.html:23
@@ -21945,8 +21957,8 @@ msgstr "Editare întrebare"
 #: pretix/control/templates/pretixcontrol/items/question.html:26
 #: pretix/control/templates/pretixcontrol/orders/fragment_order_status.html:31
 #: pretix/control/templates/pretixcontrol/orders/overview.html:88
-#: pretix/plugins/checkinlists/exporters.py:500
-#: pretix/plugins/checkinlists/exporters.py:694
+#: pretix/plugins/checkinlists/exporters.py:502
+#: pretix/plugins/checkinlists/exporters.py:696
 #: pretix/plugins/reports/exporters.py:386
 #: pretix/presale/templates/pretixpresale/event/fragment_order_status.html:23
 msgid "Paid"
@@ -22699,13 +22711,13 @@ msgid "Order details: %(code)s"
 msgstr "Detalii de comandă: %(code)s"
 
 #: pretix/control/templates/pretixcontrol/order/index.html:45
-#: pretix/control/templates/pretixcontrol/orders/index.html:298
+#: pretix/control/templates/pretixcontrol/orders/index.html:297
 #: pretix/control/views/orders.py:289
 msgid "Approve"
 msgstr "Aprobă"
 
 #: pretix/control/templates/pretixcontrol/order/index.html:50
-#: pretix/control/templates/pretixcontrol/orders/index.html:305
+#: pretix/control/templates/pretixcontrol/orders/index.html:304
 #: pretix/control/views/orders.py:303
 msgid "Deny"
 msgstr "Revocă"
@@ -23255,8 +23267,8 @@ msgstr "Marcați ca fiind gata"
 msgid ""
 "We received notice that <strong>%(amount)s</strong> have been refunded via "
 "<strong>%(method)s</strong>. If this refund is processed, the order will be "
-"underpaid by <strong>%(pending)s</strong>. The order total is "
-"<strong>%(total)s</strong>."
+"underpaid by <strong>%(pending)s</strong>. The order total is <strong>"
+"%(total)s</strong>."
 msgstr ""
 "Am fost anunțați că <strong>%(amount)s</strong> au fost rambursate prin "
 "<strong>%(method)s</strong>. În cazul în care această rambursare este "
@@ -23359,9 +23371,8 @@ msgstr "Modificați comanda"
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:12
 #, python-format
 msgid ""
-"The operation <strong>%(label)s</strong> can be applied to "
-"<strong>%(allowed)s</strong> of the selected <strong>%(total)s</strong> "
-"orders."
+"The operation <strong>%(label)s</strong> can be applied to <strong>"
+"%(allowed)s</strong> of the selected <strong>%(total)s</strong> orders."
 msgstr ""
 
 #: pretix/control/templates/pretixcontrol/orders/bulk_action.html:71
@@ -23795,31 +23806,31 @@ msgstr "Mergeți la magazinul de bilete"
 msgid "Search query:"
 msgstr "Interogare de căutare:"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:50
+#: pretix/control/templates/pretixcontrol/orders/index.html:49
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:20
 msgid "Go!"
 msgstr "Mergi!"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:90
+#: pretix/control/templates/pretixcontrol/orders/index.html:89
 msgid "Advanced search"
 msgstr "Căutare avansată"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:103
+#: pretix/control/templates/pretixcontrol/orders/index.html:102
 #, python-format
 msgid "List filtered by answers to question \"%(question)s\"."
 msgstr ""
 "Listă filtrată în funcție de răspunsurile la întrebarea \"%(question)s\"."
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:108
+#: pretix/control/templates/pretixcontrol/orders/index.html:107
 msgid "Remove filter"
 msgstr "Elimină filtru"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:146
+#: pretix/control/templates/pretixcontrol/orders/index.html:145
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:207
 msgid "Order paid / total"
 msgstr "Comanda plătită / total"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:177
+#: pretix/control/templates/pretixcontrol/orders/index.html:176
 #: pretix/control/templates/pretixcontrol/organizers/devices.html:109
 #: pretix/control/templates/pretixcontrol/subevents/index.html:128
 #: pretix/control/templates/pretixcontrol/vouchers/index.html:153
@@ -23827,8 +23838,8 @@ msgstr "Comanda plătită / total"
 msgid "select row for batch-operation"
 msgstr "selectați rândul pentru operațiunea batch"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:193
-#: pretix/control/templates/pretixcontrol/orders/index.html:195
+#: pretix/control/templates/pretixcontrol/orders/index.html:192
+#: pretix/control/templates/pretixcontrol/orders/index.html:194
 #: pretix/control/templates/pretixcontrol/search/orders.html:80
 #: pretix/control/templates/pretixcontrol/search/orders.html:82
 #, python-format
@@ -23836,14 +23847,14 @@ msgctxt "followup"
 msgid "TODO %(date)s"
 msgstr "TO-DO %(date)s"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:216
+#: pretix/control/templates/pretixcontrol/orders/index.html:215
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:246
 #: pretix/control/templates/pretixcontrol/search/orders.html:95
 msgid "CANCELLATION REQUESTED"
 msgstr "ANULARE SOLICITATĂ"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:219
-#: pretix/control/templates/pretixcontrol/orders/index.html:221
+#: pretix/control/templates/pretixcontrol/orders/index.html:218
+#: pretix/control/templates/pretixcontrol/orders/index.html:220
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:249
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:251
 #: pretix/control/templates/pretixcontrol/search/orders.html:98
@@ -23851,34 +23862,34 @@ msgstr "ANULARE SOLICITATĂ"
 msgid "REFUND PENDING"
 msgstr "RAMBURSARE ÎN AȘTEPTARE"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:224
+#: pretix/control/templates/pretixcontrol/orders/index.html:223
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:254
 #: pretix/control/templates/pretixcontrol/search/orders.html:103
 msgid "OVERPAID"
 msgstr "PLĂTITĂ ÎN PLUS"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:226
+#: pretix/control/templates/pretixcontrol/orders/index.html:225
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:256
 #: pretix/control/templates/pretixcontrol/search/orders.html:105
 msgid "UNDERPAID"
 msgstr "PLĂTITĂ ÎN MINUS"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:228
+#: pretix/control/templates/pretixcontrol/orders/index.html:227
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:258
 #: pretix/control/templates/pretixcontrol/search/orders.html:107
 msgid "FULLY PAID"
 msgstr "PLĂTITĂ INTEGRAL"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:240
+#: pretix/control/templates/pretixcontrol/orders/index.html:239
 #: pretix/control/templates/pretixcontrol/organizers/customer.html:270
 msgid "INVOICE NOT CANCELED"
 msgstr "FACTURĂ NE-ANULATĂ"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:252
+#: pretix/control/templates/pretixcontrol/orders/index.html:251
 msgid "Sum over all pages"
 msgstr "Suma tuturor paginilor"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:255
+#: pretix/control/templates/pretixcontrol/orders/index.html:254
 #, python-format
 msgid "1 order"
 msgid_plural "%(s)s orders"
@@ -23886,33 +23897,33 @@ msgstr[0] "1 comandă"
 msgstr[1] "%(s)s comenzi"
 msgstr[2] "%(s)s comenzi"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:264
-#: pretix/control/templates/pretixcontrol/orders/index.html:273
+#: pretix/control/templates/pretixcontrol/orders/index.html:263
+#: pretix/control/templates/pretixcontrol/orders/index.html:272
 msgid ""
 "This sum includes canceled orders. For your ticket revenue, look at the "
 "\"order overview\"."
 msgstr ""
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:291
+#: pretix/control/templates/pretixcontrol/orders/index.html:290
 #, fuzzy
 #| msgctxt "subevents"
 #| msgid "Select date"
 msgid "Select action"
 msgstr "Selectează data"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:312
+#: pretix/control/templates/pretixcontrol/orders/index.html:311
 #: pretix/control/views/orders.py:335
 #, fuzzy
 #| msgid "Refund full paid amount"
 msgid "Refund overpaid amount"
 msgstr "Rambursați întreaga sumă plătită"
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:320
+#: pretix/control/templates/pretixcontrol/orders/index.html:319
 #: pretix/control/views/orders.py:320
 msgid "Mark as expired if overdue"
 msgstr ""
 
-#: pretix/control/templates/pretixcontrol/orders/index.html:328
+#: pretix/control/templates/pretixcontrol/orders/index.html:327
 #, fuzzy
 #| msgid "Disable test mode"
 msgid "Delete (test mode only)"
@@ -26530,8 +26541,8 @@ msgstr "Ștergeți coșuri"
 #: pretix/control/templates/pretixcontrol/vouchers/delete_carts.html:9
 #, python-format
 msgid ""
-"Are you sure you want to delete any cart positions with voucher "
-"<strong>%(voucher)s</strong>?"
+"Are you sure you want to delete any cart positions with voucher <strong>"
+"%(voucher)s</strong>?"
 msgstr ""
 "Sunteți sigur că doriți să ștergeți toate pozițiile din coș cu voucher "
 "<strong>%(voucher)s</strong>?"
@@ -26674,8 +26685,8 @@ msgstr "Ștergeți intrarea"
 #: pretix/control/templates/pretixcontrol/waitinglist/delete.html:9
 #, python-format
 msgid ""
-"Are you sure you want to delete the following waiting list entry "
-"<strong>%(entry)s</strong>?"
+"Are you sure you want to delete the following waiting list entry <strong>"
+"%(entry)s</strong>?"
 msgstr ""
 "Sunteți sigur că doriți să ștergeți următoarea intrare din lista de "
 "așteptare <strong>%(entry)s</strong>?"
@@ -26770,8 +26781,8 @@ msgstr "Estimarea vânzărilor"
 #, python-format
 msgid ""
 "If you can make enough room at your event to fit all the persons on the "
-"waiting list in, you could sell tickets worth an additional "
-"<strong>%(amount)s</strong>."
+"waiting list in, you could sell tickets worth an additional <strong>"
+"%(amount)s</strong>."
 msgstr ""
 "Dacă puteți face suficient loc la evenimentul dvs. pentru a încadra toate "
 "persoanele de pe lista de așteptare, ați putea vinde bilete în valoare "
@@ -26855,8 +26866,8 @@ msgstr "Suma de transfer"
 #: pretix/control/templates/pretixcontrol/waitinglist/transfer.html:9
 #, fuzzy, python-format
 #| msgid ""
-#| "Are you sure you want to delete the following waiting list entry "
-#| "<strong>%(entry)s</strong>?"
+#| "Are you sure you want to delete the following waiting list entry <strong>"
+#| "%(entry)s</strong>?"
 msgctxt "subevent"
 msgid ""
 "Please select the date to which the following waiting list entry should be "
@@ -29566,12 +29577,6 @@ msgstr ""
 msgid "Payer"
 msgstr "Plătitor"
 
-#: pretix/plugins/banktransfer/refund_export.py:93
-#, fuzzy
-#| msgid "Refunds"
-msgid "Refund"
-msgstr "Rambursare"
-
 #: pretix/plugins/banktransfer/signals.py:58
 #: pretix/plugins/banktransfer/signals.py:94
 #: pretix/plugins/banktransfer/templates/pretixplugins/banktransfer/import_base.html:4
@@ -30256,108 +30261,108 @@ msgstr "Numai bilete care necesită o atenție specială"
 msgid "Include questions"
 msgstr "Includeți întrebări"
 
-#: pretix/plugins/checkinlists/exporters.py:301
+#: pretix/plugins/checkinlists/exporters.py:303
 msgid "Check-in list (PDF)"
 msgstr "Lista de check-in (PDF)"
 
-#: pretix/plugins/checkinlists/exporters.py:302
-#: pretix/plugins/checkinlists/exporters.py:473
-#: pretix/plugins/checkinlists/exporters.py:670
-#: pretix/plugins/checkinlists/exporters.py:740
+#: pretix/plugins/checkinlists/exporters.py:304
+#: pretix/plugins/checkinlists/exporters.py:475
+#: pretix/plugins/checkinlists/exporters.py:672
+#: pretix/plugins/checkinlists/exporters.py:742
 #, fuzzy
 #| msgid "Check-in"
 msgctxt "export_category"
 msgid "Check-in"
 msgstr "Check-in"
 
-#: pretix/plugins/checkinlists/exporters.py:303
+#: pretix/plugins/checkinlists/exporters.py:305
 msgid ""
 "Download a PDF version of a check-in list that can be used to check people "
 "in at the event without digital methods."
 msgstr ""
 
 #. Translators: maximum 5 characters
-#: pretix/plugins/checkinlists/exporters.py:371
+#: pretix/plugins/checkinlists/exporters.py:373
 msgctxt "tablehead"
 msgid "paid"
 msgstr "plătită"
 
-#: pretix/plugins/checkinlists/exporters.py:474
+#: pretix/plugins/checkinlists/exporters.py:476
 msgid ""
 "Download a spreadsheet with all attendees that are included in a check-in "
 "list."
 msgstr ""
 
-#: pretix/plugins/checkinlists/exporters.py:497
+#: pretix/plugins/checkinlists/exporters.py:499
 msgid "Checked out"
 msgstr "Check-out efectuat"
 
-#: pretix/plugins/checkinlists/exporters.py:497
-#: pretix/plugins/checkinlists/exporters.py:762
+#: pretix/plugins/checkinlists/exporters.py:499
+#: pretix/plugins/checkinlists/exporters.py:764
 msgid "Automatically checked in"
 msgstr "Înregistrări automate check-in"
 
-#: pretix/plugins/checkinlists/exporters.py:503
-#: pretix/plugins/checkinlists/exporters.py:691
-#: pretix/plugins/checkinlists/exporters.py:756
+#: pretix/plugins/checkinlists/exporters.py:505
+#: pretix/plugins/checkinlists/exporters.py:693
+#: pretix/plugins/checkinlists/exporters.py:758
 #: pretix/plugins/paypal/payment.py:123 pretix/plugins/paypal2/payment.py:120
 msgid "Secret"
 msgstr "Cheie secretă"
 
-#: pretix/plugins/checkinlists/exporters.py:669
+#: pretix/plugins/checkinlists/exporters.py:671
 #, fuzzy
 #| msgid "All check-ins"
 msgid "Valid check-in codes"
 msgstr "Toate check-in-urile"
 
-#: pretix/plugins/checkinlists/exporters.py:671
+#: pretix/plugins/checkinlists/exporters.py:673
 msgid ""
 "Download a spreadsheet with all valid check-in barcodes e.g. for import into "
 "a different system. Does not included blocked codes or personal data."
 msgstr ""
 
-#: pretix/plugins/checkinlists/exporters.py:739
+#: pretix/plugins/checkinlists/exporters.py:741
 msgid "Check-in log (all scans)"
 msgstr "Jurnal de check-in (toate scanările)"
 
-#: pretix/plugins/checkinlists/exporters.py:741
+#: pretix/plugins/checkinlists/exporters.py:743
 msgid ""
 "Download a spreadsheet with one line for every scan that happened at your "
 "check-in stations."
 msgstr ""
 
-#: pretix/plugins/checkinlists/exporters.py:760
+#: pretix/plugins/checkinlists/exporters.py:762
 #, fuzzy
 #| msgid "Go offline"
 msgid "Offline"
 msgstr "Treci offline"
 
-#: pretix/plugins/checkinlists/exporters.py:761
+#: pretix/plugins/checkinlists/exporters.py:763
 msgid "Offline override"
 msgstr "Ignoră offline"
 
-#: pretix/plugins/checkinlists/exporters.py:765
+#: pretix/plugins/checkinlists/exporters.py:767
 #: pretix/plugins/stripe/templates/pretixplugins/stripe/control.html:83
 msgid "Error message"
 msgstr "Mesaj de eroare"
 
-#: pretix/plugins/checkinlists/exporters.py:766
+#: pretix/plugins/checkinlists/exporters.py:768
 msgid "Upload date"
 msgstr "Data încărcării"
 
-#: pretix/plugins/checkinlists/exporters.py:767
+#: pretix/plugins/checkinlists/exporters.py:769
 msgid "Upload time"
 msgstr "Oră încărcare"
 
-#: pretix/plugins/checkinlists/exporters.py:818
+#: pretix/plugins/checkinlists/exporters.py:820
 msgid "OK"
 msgstr "OK"
 
-#: pretix/plugins/checkinlists/exporters.py:850
+#: pretix/plugins/checkinlists/exporters.py:852
 msgid "Successful scans only"
 msgstr "Numai scanări reușite"
 
-#: pretix/plugins/checkinlists/exporters.py:871
+#: pretix/plugins/checkinlists/exporters.py:873
 msgid "All check-in lists"
 msgstr "Toate listele de check-in"
 
@@ -31963,10 +31968,10 @@ msgstr "Deconectați-vă de la Stripe"
 
 #: pretix/plugins/stripe/payment.py:210
 msgid ""
-"Please configure a <a href=\"https://dashboard.stripe.com/account/"
-"webhooks\">Stripe Webhook</a> to the following endpoint in order to "
-"automatically cancel orders when charges are refunded externally and to "
-"process asynchronous payment methods like SOFORT."
+"Please configure a <a href=\"https://dashboard.stripe.com/account/webhooks"
+"\">Stripe Webhook</a> to the following endpoint in order to automatically "
+"cancel orders when charges are refunded externally and to process "
+"asynchronous payment methods like SOFORT."
 msgstr ""
 "Vă rugăm să configurați un <a href=\"https://dashboard.stripe.com/account/"
 "webhooks\">Stripe Webhook</a> la următorul endpoint pentru a anula automat "
@@ -32271,11 +32276,6 @@ msgstr "Card bancar prin Stripe"
 #: pretix/plugins/stripe/payment.py:1104
 msgid "Credit card"
 msgstr "Card bancar"
-
-#: pretix/plugins/stripe/payment.py:1186
-#, python-brace-format
-msgid "expires {month}/{year}"
-msgstr ""
 
 #: pretix/plugins/stripe/payment.py:1191
 #, fuzzy
@@ -33402,9 +33402,9 @@ msgstr ""
 #: pretix/presale/templates/pretixpresale/event/base.html:153
 #, python-format
 msgid ""
-"To view your shop at different points in time, you can enable the <a "
-"href=\"%(time_machine_link)s\"><span class=\"fa fa-clock-o\" aria-"
-"hidden=\"true\"></span>time machine</a>."
+"To view your shop at different points in time, you can enable the <a href="
+"\"%(time_machine_link)s\"><span class=\"fa fa-clock-o\" aria-hidden=\"true"
+"\"></span>time machine</a>."
 msgstr ""
 
 #: pretix/presale/templates/pretixpresale/event/base.html:164
@@ -35025,9 +35025,8 @@ msgstr ""
 #: pretix/presale/templates/pretixpresale/event/order.html:420
 #, python-format
 msgid ""
-"You can cancel this order. In this case, a cancellation fee of "
-"<strong>%(fee)s</strong> will be kept and you will receive a refund of the "
-"remainder."
+"You can cancel this order. In this case, a cancellation fee of <strong>"
+"%(fee)s</strong> will be kept and you will receive a refund of the remainder."
 msgstr ""
 "Puteți anula această comandă. În acest caz, se percepe o taxă de anulare de "
 "<strong>%(fee)s</strong> și veți primi o rambursare a sumei rămase."
@@ -36269,21 +36268,26 @@ msgstr "Data selectată nu există în această serie de evenimente."
 msgid "from %(start_date)s"
 msgstr "de la %(start_date)s"
 
-#: pretix/settings.py:789
+#: pretix/settings.py:874
 msgid "User profile only"
 msgstr "Doar profilul utilizatorului"
 
-#: pretix/settings.py:790
+#: pretix/settings.py:875
 msgid "Read access"
 msgstr "Acces la citire"
 
-#: pretix/settings.py:791
+#: pretix/settings.py:876
 msgid "Write access"
 msgstr "Acces la scriere"
 
-#: pretix/settings.py:802
+#: pretix/settings.py:887
 msgid "Kosovo"
 msgstr "Kosovo"
+
+#, fuzzy
+#~| msgid "Refunds"
+#~ msgid "Refund"
+#~ msgstr "Rambursare"
 
 #~ msgid "Show event times and dates on the ticket shop"
 #~ msgstr "Afișați orele și datele evenimentelor în magazinul de bilete"
@@ -36302,7 +36306,6 @@ msgstr "Kosovo"
 #~ "afișată nicio dată sau oră. Această setare nu afectează însă afișarea în "
 #~ "alte locații."
 
-#, python-brace-format
 #~ msgid "The invite for {user} has been revoked."
 #~ msgstr "Invitația pentru {user} a fost revocată."
 
@@ -36334,11 +36337,9 @@ msgstr "Kosovo"
 #~ "zile</strong> pentru a fi confirmate. Vă rugăm să activați această metodă "
 #~ "de plată numai dacă termenul de plată permite acest decalaj."
 
-#, python-format
 #~ msgid "Quantity of %(item)s, %(var)s to order"
 #~ msgstr "Cantitatea de %(item)s, %(var)s de comandat"
 
-#, python-format
 #~ msgid "Quantity of %(item)s to order"
 #~ msgstr "Cantitatea de %(item)s de comandat"
 
@@ -36364,7 +36365,6 @@ msgstr "Kosovo"
 #~ msgid "Sales channels to automatically check in"
 #~ msgstr "Canale de vânzări pentru a face check-in automat"
 
-#, python-brace-format
 #~ msgid "{category} (Add-On products)"
 #~ msgstr "{category} (Produse suplimentare)"
 
@@ -36412,7 +36412,6 @@ msgstr "Kosovo"
 #~ "Sintaxă nevalabilă pentru placeholder: Ați folosit un număr diferit de "
 #~ "\"{\" și de \"}\"."
 
-#, python-brace-format
 #~ msgid "The seat \"{id}\" is already sold or currently blocked."
 #~ msgstr "Locul \"{id}\" este deja vândut sau este blocat în prezent."
 
@@ -36475,7 +36474,7 @@ msgstr "Kosovo"
 #~ msgid "Translation in development"
 #~ msgstr "Traducere în curs de dezvoltare"
 
-#, fuzzy, python-format
+#, fuzzy
 #~| msgid ""
 #~| "\n"
 #~| "                                        from %(start_date)s\n"
@@ -36495,7 +36494,6 @@ msgstr "Kosovo"
 #~ msgid "By default, only paid orders will receive the email"
 #~ msgstr "În mod implicit, doar comenzile plătite vor primi e-mailul"
 
-#, python-format
 #~ msgid ""
 #~ "\n"
 #~ "Please transfer the full amount to the following bank account.\n"
@@ -36540,7 +36538,6 @@ msgstr "Kosovo"
 #~ "Vă rugăm să efectuați exporturi de rambursare pentru fiecare eveniment în "
 #~ "parte, deoarece acest organizator are evenimente cu mai multe valute."
 
-#, python-format
 #~ msgid ""
 #~ "\n"
 #~ "                                                Add-on product to "
@@ -36550,11 +36547,10 @@ msgstr "Kosovo"
 #~ "                                                Produs suplimentar add-on "
 #~ "la poziția #%(positionid)s"
 
-#, python-format
 #~ msgid ""
 #~ "Add-on product\n"
-#~ "                                                to position "
-#~ "#%(positionid)s"
+#~ "                                                to position #"
+#~ "%(positionid)s"
 #~ msgstr ""
 #~ "Produs suplimentar add-on\n"
 #~ "                                                la poziția #%(positionid)s"
@@ -36573,7 +36569,6 @@ msgstr "Kosovo"
 #~ msgid "Tickets & check-in"
 #~ msgstr "Bilete și check-in"
 
-#, python-format
 #~ msgid "Your order received an incomplete payment: %(code)s"
 #~ msgstr "Comanda dumneavoastră a primit o plată incompletă: %(code)s"
 
@@ -36649,7 +36644,7 @@ msgstr "Kosovo"
 #~ msgid "A new client secret has been generated and is now effective."
 #~ msgstr "Un nou secret de client a fost generat și este acum în vigoare."
 
-#, fuzzy, python-format
+#, fuzzy
 #~| msgid ""
 #~| "\n"
 #~| "        Your gift card will be used to pay for this order. If the credit "
@@ -36682,7 +36677,6 @@ msgstr "Kosovo"
 #~ msgid "FREE"
 #~ msgstr "GRATUIT"
 
-#, python-format
 #~ msgid "Your event registration: %(code)s"
 #~ msgstr "Înregistrarea la eveniment: %(code)s"
 
@@ -36752,7 +36746,6 @@ msgstr "Kosovo"
 #~ msgid "Order ID"
 #~ msgstr "Comanda"
 
-#, python-format
 #~ msgid "Original price: %(price)s"
 #~ msgstr "Preț inițial: %(price)s"
 
