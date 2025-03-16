@@ -147,6 +147,7 @@ class MultiDomainMiddleware(MiddlewareMixin):
     def process_response(self, request, response):
         if getattr(request, "urlconf", None):
             patch_vary_headers(response, ('Host',))
+        response["Access-Control-Allow-Origin"] = "*"
         return response
 
 
