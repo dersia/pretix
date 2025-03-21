@@ -69,7 +69,7 @@ from pretix.base.services.cart import (
 from pretix.base.services.cross_selling import CrossSellingService
 from pretix.base.services.memberships import validate_memberships_in_order
 from pretix.base.services.orders import perform_order
-from pretix.base.services.tasks import EventTask
+from pretix.base.services.tasks import DbRetryableEventTask
 from pretix.base.settings import PERSON_NAME_SCHEMES
 from pretix.base.signals import validate_cart_addons
 from pretix.base.templatetags.money import money_filter
@@ -1226,7 +1226,7 @@ class QuestionsStep(QuestionsViewMixin, CartMixin, TemplateFlowStep):
         return cached_result
 
     @staticmethod
-    @app.task(base=EventTask)
+    @app.task(base=DbRetryableEventTask)
     def _update_is_business_heuristic(event):
         result = InvoiceAddress.objects.filter(order__event=event).aggregate(
             total=Count('*'), business=Sum(Cast('is_business', output_field=models.IntegerField())))

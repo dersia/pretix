@@ -43,7 +43,7 @@ from pretix.base.models import (
 from pretix.base.models.exports import ScheduledOrganizerExport
 from pretix.base.services.mail import mail
 from pretix.base.services.tasks import (
-    EventTask, OrganizerTask, ProfiledEventTask, ProfiledOrganizerUserTask,
+    DbRetryableEventTask, DbRetryableOrganizerTask, ProfiledEventTask, ProfiledOrganizerUserTask,
 )
 from pretix.base.signals import (
     periodic_task, register_data_exporters, register_multievent_data_exporters,
@@ -274,7 +274,7 @@ def _run_scheduled_export(schedule, context: Union[Event, Organizer], exporter, 
             )
 
 
-@app.task(base=OrganizerTask, bind=True, max_retries=5, default_retry_delay=120)
+@app.task(base=DbRetryableOrganizerTask, bind=True, max_retries=5, default_retry_delay=120)
 def scheduled_organizer_export(self, organizer: Organizer, schedule: int) -> None:
     schedule = organizer.scheduled_exports.get(pk=schedule)
 
@@ -319,7 +319,7 @@ def scheduled_organizer_export(self, organizer: Organizer, schedule: int) -> Non
     )
 
 
-@app.task(base=EventTask, bind=True, max_retries=5, default_retry_delay=120)
+@app.task(base=DbRetryableEventTask, bind=True, max_retries=5, default_retry_delay=120)
 def scheduled_event_export(self, event: Event, schedule: int) -> None:
     schedule = event.scheduled_exports.get(pk=schedule)
 

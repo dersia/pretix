@@ -65,6 +65,7 @@ flake8==7.1.2
 freezegun==1.5.1
 frozenlist==1.5.0
 geoip2==5.0.1
+googlemaps==4.10.0
 gunicorn==23.0.0
 idna==3.10
 importlib_metadata==8.6.1
@@ -102,7 +103,9 @@ pluggy==1.5.0
 polib==1.2.0
 portalocker==2.10.1
 potypo==0.0.2
-pretix @ git+https://${GITHUB_TOKEN}@github.com/dersia/pretix.git@4ed52172c008325ac0f5b15c3656f4d3b1267cb9#egg=pretix
+pretix @ git+https://${GITHUB_TOKEN}@github.com/dersia/pretix.git@bf67e4efe28896f3818d302a01ef53705ceb72ba#egg=pretix
+pretix-mollie==2.3.0
+pretix-passbook==1.13.3
 pretix-plugin-build==1.0.1
 prompt_toolkit==3.0.50
 propcache==0.3.0
@@ -171,6 +174,7 @@ urllib3==2.3.0
 vat-moss-forked==2020.3.20.0.11.0
 vine==5.1.0
 vobject==0.9.9
+wallet-py3k==0.0.4
 wcwidth==0.2.13
 webauthn==2.5.2
 webencodings==0.5.1

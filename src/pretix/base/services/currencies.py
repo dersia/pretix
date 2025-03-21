@@ -22,6 +22,7 @@
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 
+from pretix.base.services.tasks import DbRetryableTask
 import requests
 from django.conf import settings
 from django.db.models import Max
@@ -66,7 +67,7 @@ def fetch_rates(sender, **kwargs):
         task.apply_async()
 
 
-@app.task()
+@app.task(base=DbRetryableTask)
 def fetch_ecb_rates():
     """
     Fetches currency rates from the European Central Bank.
@@ -113,7 +114,7 @@ def fetch_ecb_rates():
         )
 
 
-@app.task()
+@app.task(base=DbRetryableTask)
 def fetch_cnb_cz_rates():
     """
     Fetches currency rates from the Czech National Bank.

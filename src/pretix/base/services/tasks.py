@@ -34,7 +34,7 @@ import random
 import time
 
 from django.conf import settings
-from django.db import transaction
+from django.db import OperationalError, transaction
 from django_scopes import scope, scopes_disabled
 
 from pretix.base.metrics import (
@@ -43,10 +43,15 @@ from pretix.base.metrics import (
 from pretix.base.models import Event, Organizer, User
 from pretix.celery_app import app
 
+import configparser
+from django.db import connections
+from django.db.utils import OperationalError, ProgrammingError
+from pretix.settings import get_db_password
+from pretix.helpers.config import EnvOrParserConfig
+
 
 class ProfiledTask(app.Task):
     def __call__(self, *args, **kwargs):
-
         if settings.PROFILING_RATE > 0 and random.random() < settings.PROFILING_RATE / 100:
             profiler = cProfile.Profile()
             profiler.enable()
@@ -151,15 +156,110 @@ class OrganizerUserTask(app.Task):
         return ret
 
 
-class ProfiledEventTask(ProfiledTask, EventTask):
+class DbRetryableTask(app.Task):
+    def __call__(self, *args, **kwargs):
+        try:
+            ret = super().__call__(*args, **kwargs)
+        except OperationalError:
+            print('connection failed reloading')
+            print('got new password, setting')
+            databases = settings.DATABASES
+            db_backend = databases['default']['ENGINE']
+            db_pw = databases['default']['PASSWORD']
+            newDbPw = get_db_password(db_backend, db_pw)
+            databases['default']['PASSWORD'] = newDbPw
+            connections['default'].PASSWORD = newDbPw
+            connections['default'].ensure_connection()
+            print('updated DB connection')
+            ret = super().__call__(*args, **kwargs)
+        return ret
+
+
+class DbRetryableProfiledTask(ProfiledTask):
+    def __call__(self, *args, **kwargs):
+        try:
+            ret = super().__call__(*args, **kwargs)
+        except OperationalError:
+            print('connection failed reloading')
+            print('got new password, setting')
+            databases = settings.DATABASES
+            db_backend = databases['default']['ENGINE']
+            db_pw = databases['default']['PASSWORD']
+            newDbPw = get_db_password(db_backend, db_pw)
+            databases['default']['PASSWORD'] = newDbPw
+            connections['default'].PASSWORD = newDbPw
+            connections['default'].ensure_connection()
+            print('updated DB connection')
+            ret = super().__call__(*args, **kwargs)
+        return ret
+
+
+class DbRetryableEventTask(EventTask):
+    def __call__(self, *args, **kwargs):
+        try:
+            ret = super().__call__(*args, **kwargs)
+        except OperationalError:
+            print('connection failed reloading')
+            print('got new password, setting')
+            databases = settings.DATABASES
+            db_backend = databases['default']['ENGINE']
+            db_pw = databases['default']['PASSWORD']
+            newDbPw = get_db_password(db_backend, db_pw)
+            databases['default']['PASSWORD'] = newDbPw
+            connections['default'].PASSWORD = newDbPw
+            connections['default'].ensure_connection()
+            print('updated DB connection')
+            ret = super().__call__(*args, **kwargs)
+        return ret
+
+
+class DbRetryableOrganizerTask(OrganizerTask):
+    def __call__(self, *args, **kwargs):
+        try:
+            ret = super().__call__(*args, **kwargs)
+        except OperationalError:
+            print('connection failed reloading')
+            print('got new password, setting')
+            databases = settings.DATABASES
+            db_backend = databases['default']['ENGINE']
+            db_pw = databases['default']['PASSWORD']
+            newDbPw = get_db_password(db_backend, db_pw)
+            databases['default']['PASSWORD'] = newDbPw
+            connections['default'].PASSWORD = newDbPw
+            connections['default'].ensure_connection()
+            print('updated DB connection')
+            ret = super().__call__(*args, **kwargs)
+        return ret
+
+
+class DbRetryableOrganizerUserTask(OrganizerUserTask):
+    def __call__(self, *args, **kwargs):
+        try:
+            ret = super().__call__(*args, **kwargs)
+        except OperationalError:
+            print('connection failed reloading')
+            print('got new password, setting')
+            databases = settings.DATABASES
+            db_backend = databases['default']['ENGINE']
+            db_pw = databases['default']['PASSWORD']
+            newDbPw = get_db_password(db_backend, db_pw)
+            databases['default']['PASSWORD'] = newDbPw
+            connections['default'].PASSWORD = newDbPw
+            connections['default'].ensure_connection()
+            print('updated DB connection')
+            ret = super().__call__(*args, **kwargs)
+        return ret
+
+
+class ProfiledEventTask(DbRetryableProfiledTask, DbRetryableEventTask):
     pass
 
 
-class ProfiledOrganizerUserTask(ProfiledTask, OrganizerUserTask):
+class ProfiledOrganizerUserTask(DbRetryableProfiledTask, DbRetryableOrganizerUserTask):
     pass
 
 
-class TransactionAwareTask(ProfiledTask):
+class TransactionAwareTask(DbRetryableProfiledTask):
     """
     Task class which is aware of django db transactions and only executes tasks
     after transaction has been committed
@@ -185,3 +285,5 @@ class TransactionAwareProfiledEventTask(ProfiledEventTask):
         transaction.on_commit(
             lambda: super(TransactionAwareProfiledEventTask, self).apply_async(*args, **kwargs)
         )
+
+

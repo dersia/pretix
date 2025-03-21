@@ -9,6 +9,7 @@ _config = configparser.RawConfigParser()
 
 config = EnvOrParserConfig(_config)
 
+
 class DbAuthenticationMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -20,7 +21,7 @@ class DbAuthenticationMiddleware:
         try:
             print('checking database')
             connections['default'].ensure_connection()
-        except OperationalError as e:
+        except OperationalError:
             print('connection failed reloading')
             db_backend = config.get("database", "backend")
             newDbPw = get_db_password(db_backend, config.get("database", "password", fallback=''))

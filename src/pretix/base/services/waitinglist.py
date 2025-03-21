@@ -36,12 +36,12 @@ from pretix.base.models import (
 )
 from pretix.base.models.waitinglist import WaitingListException
 from pretix.base.services.locking import lock_objects
-from pretix.base.services.tasks import EventTask
+from pretix.base.services.tasks import DbRetryableEventTask
 from pretix.base.signals import periodic_task
 from pretix.celery_app import app
 
 
-@app.task(base=EventTask)
+@app.task(base=DbRetryableEventTask)
 def assign_automatically(event: Event, user_id: int=None, subevent_id: int=None):
     if user_id:
         user = User.objects.get(id=user_id)

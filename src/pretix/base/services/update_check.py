@@ -23,6 +23,7 @@ import sys
 import uuid
 from datetime import timedelta
 
+from pretix.base.services.tasks import DbRetryableTask
 import requests
 from django.dispatch import receiver
 from django.utils.timezone import now
@@ -50,7 +51,7 @@ def run_update_check(sender, **kwargs):
         update_check.apply_async()
 
 
-@app.task
+@app.task(base=DbRetryableTask)
 @scopes_disabled()
 def update_check():
     gs = GlobalSettingsObject()
