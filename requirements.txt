@@ -111,7 +111,7 @@ prompt_toolkit==3.0.50
 propcache==0.3.0
 protobuf==5.29.3
 psycopg2-binary==2.9.10
-pycodestyle==2.12.1
+pycodestyle==2.13.0
 pycountry==24.6.1
 pycparser==2.22
 pycryptodome==3.21.0
