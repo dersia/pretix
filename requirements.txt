@@ -114,7 +114,7 @@ psycopg2-binary==2.9.10
 pycodestyle==2.12.1
 pycountry==24.6.1
 pycparser==2.22
-pycryptodome==3.21.0
+pycryptodome==3.22.0
 pyenchant==3.2.2
 pyflakes==3.2.0
 Pygments==2.19.1
