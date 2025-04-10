@@ -138,7 +138,7 @@ pytz-deprecation-shim==0.1.0.post0
 pyuca==1.2
 PyYAML==6.0.2
 qrcode==8.0
-rcssmin==1.1.2
+rcssmin==1.2.1
 redis==5.2.1
 referencing==0.36.2
 regex==2024.11.6
