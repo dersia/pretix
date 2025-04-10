@@ -108,7 +108,7 @@ pretix-mollie==2.3.0
 pretix-passbook==1.13.3
 pretix-plugin-build==1.0.1
 prompt_toolkit==3.0.50
-propcache==0.3.0
+propcache==0.3.1
 protobuf==5.29.3
 psycopg2-binary==2.9.10
 pycodestyle==2.12.1
