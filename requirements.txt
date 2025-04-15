@@ -150,7 +150,7 @@ requests-toolbelt==1.0.0
 responses==0.25.7
 rjsmin==1.2.2
 rpds-py==0.23.1
-sentry-sdk==2.22.0
+sentry-sdk==2.26.1
 sepaxml==2.6.2
 setuptools==76.0.0
 six==1.17.0
