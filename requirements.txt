@@ -103,7 +103,7 @@ pluggy==1.5.0
 polib==1.2.0
 portalocker==2.10.1
 potypo==0.0.2
-pretix @ git+https://${GITHUB_TOKEN}@github.com/dersia/pretix.git@9544939d4070e2adfbf88de692400793fceb63f5
+pretix @ git+https://${GITHUB_TOKEN}@github.com/dersia/pretix.git@60dd8a6e4a376dfbc07b9ea75232e920d7d064af#egg=pretix
 pretix-mollie==2.3.0
 pretix-passbook==1.13.3
 pretix-plugin-build==1.0.1

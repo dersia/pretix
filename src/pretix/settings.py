@@ -186,7 +186,7 @@ db_disable_server_side_cursors = (db_backend == 'postgresql' or db_backend == 'a
 
 DATABASES = {
     'default': {
-        'ENGINE': 'pretix.db.backends.' + db_backend,
+        'ENGINE': 'pretix.db.backends.' + db_backend if db_backend =='azurepostgresql' else 'django.db.backends.' + db_backend,
         'NAME': db_name,
         'USER': config.get('database', 'user', fallback=''),
         'PASSWORD': '', #get_db_password(db_backend, config.get("database", "password", fallback='')),
@@ -207,7 +207,7 @@ DATABASE_REPLICA = 'default'
 if config.has_section('replica'):
     DATABASE_REPLICA = 'replica'
     DATABASES['replica'] = {
-        'ENGINE': 'pretix.db.backends.' + db_backend,
+        'ENGINE': 'pretix.db.backends.' + db_backend if db_backend =='azurepostgresql' else 'django.db.backends.' + db_backend,
         'NAME': config.get('replica', 'name', fallback=DATABASES['default']['NAME']),
         'USER': config.get('replica', 'user', fallback=DATABASES['default']['USER']),
         'PASSWORD': '', # get_db_password(db_backend, config.get('replica', 'password', fallback=DATABASES['default']['PASSWORD'])),
