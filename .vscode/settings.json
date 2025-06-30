@@ -1,4 +1,7 @@
 {
-    "python.analysis.extraPaths": ["~/env/pretix/lib/python3.13/site-packages"]
+    "python.analysis.extraPaths": [
+        "~/env/pretix/lib/python3.13/site-packages",
+        "~/env/pretix/lib/python3.12/site-packages"
+    ]
     
 }

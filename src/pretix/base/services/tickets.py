@@ -33,7 +33,7 @@ from pretix.base.models import (
     CachedCombinedTicket, CachedTicket, Event, InvoiceAddress, Order,
     OrderPosition,
 )
-from pretix.base.services.tasks import DbRetryableEventTask, DbRetryableProfiledTask
+from pretix.base.services.tasks import EventTask, ProfiledTask
 from pretix.base.settings import PERSON_NAME_SCHEMES
 from pretix.base.signals import register_ticket_outputs
 from pretix.celery_app import app
@@ -81,7 +81,7 @@ def generate_order(order: int, provider: str):
                 return ct.pk
 
 
-@app.task(base=DbRetryableProfiledTask)
+@app.task(base=ProfiledTask)
 def generate(model: str, pk: int, provider: str):
     with scopes_disabled():
         if model == 'order':
@@ -205,7 +205,7 @@ def get_tickets_for_order(order, base_position=None):
     return tickets
 
 
-@app.task(base=DbRetryableEventTask, acks_late=True)
+@app.task(base=EventTask, acks_late=True)
 def invalidate_cache(event: Event, item: int=None, provider: str=None, order: int=None, **kwargs):
     qs = CachedTicket.objects.filter(order_position__order__event=event)
     qsc = CachedCombinedTicket.objects.filter(order__event=event)

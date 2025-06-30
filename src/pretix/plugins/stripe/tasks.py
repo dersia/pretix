@@ -25,7 +25,7 @@ from urllib.parse import urlsplit
 import stripe
 from django.conf import settings
 
-from pretix.base.services.tasks import DbRetryableEventTask
+from pretix.base.services.tasks import EventTask
 from pretix.celery_app import app
 from pretix.multidomain.urlreverse import get_event_domain
 from pretix.plugins.stripe.models import RegisteredApplePayDomain
@@ -48,7 +48,7 @@ def get_stripe_account_key(prov):
         return prov.settings.publishable_key
 
 
-@app.task(base=DbRetryableEventTask, max_retries=5, default_retry_delay=1)
+@app.task(base=EventTask, max_retries=5, default_retry_delay=1)
 def stripe_verify_domain(event, domain):
     from pretix.plugins.stripe.payment import StripeCC
     prov = StripeCC(event)

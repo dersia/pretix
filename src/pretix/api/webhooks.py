@@ -39,7 +39,7 @@ from pretix.api.models import (
 )
 from pretix.api.signals import register_webhook_events
 from pretix.base.models import LogEntry
-from pretix.base.services.tasks import DbRetryableProfiledTask, TransactionAwareTask
+from pretix.base.services.tasks import ProfiledTask, TransactionAwareTask
 from pretix.base.signals import periodic_task
 from pretix.celery_app import app
 from pretix.helpers import OF_SELF
@@ -434,7 +434,7 @@ def notify_webhooks(logentry_ids: list):
             send_webhook.apply_async(args=(logentry.id, notification_type.action_type, wh.pk))
 
 
-@app.task(base=DbRetryableProfiledTask, bind=True, max_retries=5, default_retry_delay=60, acks_late=True, autoretry_for=(DatabaseError,),)
+@app.task(base=ProfiledTask, bind=True, max_retries=5, default_retry_delay=60, acks_late=True, autoretry_for=(DatabaseError,),)
 def send_webhook(self, logentry_id: int, action_type: str, webhook_id: int, retry_count: int = 0):
     """
     Sends out a specific webhook using adequate retry and error handling logic.

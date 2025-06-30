@@ -33,7 +33,7 @@ from pretix.base.models import (
     cachedfile_name,
 )
 from pretix.base.services.orders import OrderError
-from pretix.base.services.tasks import DbRetryableEventTask
+from pretix.base.services.tasks import EventTask
 from pretix.celery_app import app
 
 from ...base.i18n import language
@@ -44,7 +44,7 @@ from .ticketoutput import PdfTicketOutput
 logger = logging.getLogger(__name__)
 
 
-@app.task(base=DbRetryableEventTask, throws=(OrderError, ExportError,))
+@app.task(base=EventTask, throws=(OrderError, ExportError,))
 def tickets_create_pdf(event: Event, fileid: int, position: int, channel) -> int:
     file = CachedFile.objects.get(id=fileid)
     position = OrderPosition.all.get(id=position)
@@ -56,7 +56,7 @@ def tickets_create_pdf(event: Event, fileid: int, position: int, channel) -> int
     return file.pk
 
 
-@app.task(base=DbRetryableEventTask, throws=(OrderError, ExportError,))
+@app.task(base=EventTask, throws=(OrderError, ExportError,))
 def bulk_render(event: Event, fileid: int, parts: list) -> int:
     file = CachedFile.objects.get(id=fileid)
 

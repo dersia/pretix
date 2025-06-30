@@ -141,45 +141,14 @@ def get_redis_connectionstring(url):
             return new_url
     return url
 
-azure_token = None
-
-def get_db_password(db_backend, fallback):
-    global azure_token
-    if azure_token is not None and azure_token == "disabled":
-        return fallback
-    if azure_token is not None and hasattr(azure_token, 'token') and azure_token.token != "" and azure_token.expires_on > (datetime.now() - timedelta(minutes=3)).timestamp():
-        return azure_token.token
-
-    db_password = fallback
-    if db_password != "":
-        azure_token = "disabled"
-        return db_password
-    
-    
-    if db_backend == "postgresql" and db_password == "":
-        try:
-            logging.info("Acquiring new Token for Managed Identity")
-            azure_token = azure_credential.get_token("https://ossrdbms-aad.database.windows.net", tenant_id=AZURE_TENANT_ID)
-            if azure_token.token != "":
-                db_password = azure_token.token
-                CONN_HEALTH_CHECKS = True
-        except Exception as e:
-            print("error loading managed identity")
-            print(e)
-            raise e
-    return db_password
-
 postgresql_sslmode = config.get('database', 'sslmode', fallback='disable')
 USE_DATABASE_TLS = postgresql_sslmode != 'disable'
 USE_DATABASE_MTLS = USE_DATABASE_TLS and config.has_option('database', 'sslcert')
 
 def get_db_options(db_backend):
-    global azure_token
     tls_config = {}
     if db_backend == "sqlite3":
         return {"init_command": "PRAGMA synchronous=3; PRAGMA cache_size=2000;"}
-    elif azure_token is not None and hasattr(azure_token, 'token'):
-        return {'sslmode': 'require'}
     elif USE_DATABASE_TLS or USE_DATABASE_MTLS:
         if not USE_DATABASE_MTLS:
             if 'postgresql' in db_backend:
@@ -213,36 +182,44 @@ DATABASE_ADVISORY_LOCK_INDEX = config.getint('database', 'advisory_lock_index', 
 
 # db_options = {}
 
-db_disable_server_side_cursors = db_backend == 'postgresql' and config.getboolean('database', 'disable_server_side_cursors', fallback=False)
+db_disable_server_side_cursors = (db_backend == 'postgresql' or db_backend == 'azurepostgresql') and config.getboolean('database', 'disable_server_side_cursors', fallback=False)
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.' + db_backend,
+        'ENGINE': 'pretix.db.backends.' + db_backend,
         'NAME': db_name,
         'USER': config.get('database', 'user', fallback=''),
-        'PASSWORD': get_db_password(db_backend, config.get("database", "password", fallback='')),
+        'PASSWORD': '', #get_db_password(db_backend, config.get("database", "password", fallback='')),
         'HOST': config.get('database', 'host', fallback=''),
         'PORT': config.get('database', 'port', fallback=''),
         'CONN_MAX_AGE': 0 if db_backend == 'sqlite3' else 120,
         'CONN_HEALTH_CHECKS': db_backend != 'sqlite3',  # Will only be used from Django 4.1 onwards
         'DISABLE_SERVER_SIDE_CURSORS': db_disable_server_side_cursors,
         'OPTIONS': get_db_options(db_backend),
-        'TEST': {}
+        'TEST': {},
+        'AZURE': {
+            'managed_identity': AZURE_MANAGED_IDENTITY,
+            'tenant_id': AZURE_TENANT_ID
+        }
     }
 }
 DATABASE_REPLICA = 'default'
 if config.has_section('replica'):
     DATABASE_REPLICA = 'replica'
     DATABASES['replica'] = {
-        'ENGINE': 'django.db.backends.' + db_backend,
+        'ENGINE': 'pretix.db.backends.' + db_backend,
         'NAME': config.get('replica', 'name', fallback=DATABASES['default']['NAME']),
         'USER': config.get('replica', 'user', fallback=DATABASES['default']['USER']),
-        'PASSWORD': get_db_password(db_backend, config.get('replica', 'password', fallback=DATABASES['default']['PASSWORD'])),
+        'PASSWORD': '', # get_db_password(db_backend, config.get('replica', 'password', fallback=DATABASES['default']['PASSWORD'])),
         'HOST': config.get('replica', 'host', fallback=DATABASES['default']['HOST']),
         'PORT': config.get('replica', 'port', fallback=DATABASES['default']['PORT']),
         'CONN_MAX_AGE': 0 if db_backend == 'sqlite3' else 120,
         'OPTIONS': get_db_options(db_backend),
-        'TEST': {}
+        'TEST': {},
+        'AZURE': {
+            'managed_identity': AZURE_MANAGED_IDENTITY,
+            'tenant_id': AZURE_TENANT_ID
+        }
     }
     DATABASE_ROUTERS = ['pretix.helpers.database.ReplicaRouter']
 
@@ -522,7 +499,6 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'pretix.helpers.logs.RequestIdMiddleware',
     'pretix.api.middleware.IdempotencyMiddleware',
-    'pretix.db.DbAuthenticationMiddleware',
     'pretix.multidomain.middlewares.MultiDomainMiddleware',
     'pretix.base.middleware.CustomCommonMiddleware',
     'pretix.multidomain.middlewares.SessionMiddleware',

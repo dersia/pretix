@@ -95,7 +95,7 @@ from pretix.base.services.pricing import (
     apply_discounts, get_listed_price, get_price,
 )
 from pretix.base.services.quotas import QuotaAvailability
-from pretix.base.services.tasks import ProfiledEventTask, DbRetryableProfiledTask
+from pretix.base.services.tasks import ProfiledEventTask, ProfiledTask
 from pretix.base.signals import (
     order_approved, order_canceled, order_changed, order_denied, order_expired,
     order_expiry_changed, order_fee_calculation, order_paid, order_placed,
@@ -3014,7 +3014,7 @@ def _try_auto_refund(order, auto_refund=True, manual_refund=False, allow_partial
         )
 
 
-@app.task(base=DbRetryableProfiledTask, bind=True, max_retries=5, default_retry_delay=1, throws=(OrderError,))
+@app.task(base=ProfiledTask, bind=True, max_retries=5, default_retry_delay=1, throws=(OrderError,))
 @scopes_disabled()
 def cancel_order(self, order: int, user: int=None, send_mail: bool=True, api_token=None, oauth_application=None,
                  device=None, cancellation_fee=None, try_auto_refund=False, refund_as_giftcard=False,
