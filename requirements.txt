@@ -1,4 +1,4 @@
-aiohappyeyeballs==2.6.1
+aiohappyeyeballs==2.5.0
 aiohttp==3.11.13
 aiosignal==1.3.2
 amqp==5.3.1
@@ -7,7 +7,7 @@ argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
 asgiref==3.8.1
 asn1crypto==1.5.1
-attrs==25.3.0
+attrs==25.1.0
 azure-core==1.32.0
 azure-identity==1.20.0
 azure-keyvault-secrets==4.9.0
@@ -83,7 +83,7 @@ lxml==5.3.1
 Markdown==3.7
 maxminddb==2.6.3
 mccabe==0.7.0
-msal==1.32.0
+msal==1.31.1
 msal-extensions==1.2.0
 mt-940==4.30.0
 multidict==6.1.0
@@ -103,7 +103,7 @@ pluggy==1.5.0
 polib==1.2.0
 portalocker==2.10.1
 potypo==0.0.2
-pretix @ git+https://${GITHUB_TOKEN}@github.com/dersia/pretix.git@60dd8a6e4a376dfbc07b9ea75232e920d7d064af#egg=pretix
+pretix @ git+https://${GITHUB_TOKEN}@github.com/dersia/pretix.git@8f72bcc7eb41915775074ed44ea46a2a3040b2c3#egg=pretix
 pretix-mollie==2.3.0
 pretix-passbook==1.13.3
 pretix-plugin-build==1.0.1
@@ -147,7 +147,7 @@ requests==2.31.0
 requests-file==2.1.0
 requests-oauthlib==2.0.0
 requests-toolbelt==1.0.0
-responses==0.25.7
+responses==0.25.6
 rjsmin==1.2.2
 rpds-py==0.23.1
 sentry-sdk==2.22.0
